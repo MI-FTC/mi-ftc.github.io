@@ -10,6 +10,23 @@ code {
   white-space: pre-wrap;
 }
 
+.spacelink {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  display: inline-block;
+}
+
+
+/*
+  Available topic fields:
+  h5 - class="topic"
+  i - class="tdesc"
+*/
+
+.topic {
+  display: inline;
+}
+
 
 /*
   Available navtable fields:
