@@ -1,7 +1,7 @@
 ## Welcome to MI-FTC!  
 *Last updated 6-30-22*  
 
-|                                  Navigation  
+|                                  Navigation                                 |  
 | [Go to Home Page](index.html) | [See Planned Changes to the Website](changes.html) | [Which materials are hosted here?](tutorial/mine.html) |  
 
   
