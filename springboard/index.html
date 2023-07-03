@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FTC Springboard</title>
+    <title>FTC Programming Springboard - MI-FTC</title>
     <link href="../global.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
@@ -11,7 +11,7 @@
     <div id="headerbox">
     <h2 style="color: darkorange;">Under Construction</h2>
 	<p>We are working hard to get this finished before the 2023-24 season begins!</p>
-    <h3>FTC Springboard</h3>
+    <h3>FTC Programming Springboard</h3>
     <p>Welcome to FTC! No experience in particular is required.</p>
     <p><b>All links (except Navigation below) open in a new tab.</b></p>
     
@@ -23,7 +23,7 @@
     </tbody></table>
     </div>
     
-    <i class="modtime">Last updated 7-2-23</i>
+    <i class="modtime">Last updated 7-3-23</i>
     </div>
     <hr>
     <span id="legendbox">
@@ -39,27 +39,27 @@
     
     <div id="contentbox">
       <h5 class="theader">Choose a Programming Environment</h5> - <i class="tdesc">It's worth setting it up now so you can just think about code later.</i><ul>
-        <li>If you are a brand new programmer, consult with your mentors (or, better yet, a family member who is a programmer) to determine whether Blocks or Java is best for you. Blocks is often considered to be easier for new programmers to understand, and we would recommend choosing that if you cannot consult with anyone. Otherwise, ask someone who knows you better than this paragraph of text does in case there is a better path for you.</li>
+        <li>If you are a brand new programmer, consult with your mentors (or, better yet, a family member who is a programmer) to determine whether Blocks or Java is best for you. Blocks is often considered to be easier for new programmers to understand, and we would recommend starting with that if you cannot consult with anyone. Otherwise, ask someone who knows you better than this paragraph of text does in case there is a better path for you.</li>
         <li>If you are more used to a Blockly language <i class="mdesc">(code.org, Scratch, AppInventor)</i>, want a more visual representation of your code, or are part of a team that exclusively uses Blocks code, then <b style="color: green">Blocks</b> could be a good option for you. However, Java has important advantages <i class="mdesc">(libraries, full access to the SDK, more support materials)</i> that you cannot get with Blocks, so remember it as an option if you ever need that functionality in the future. It shouldn't be too hard to switch over. If you wish to proceed with Blocks, you will be using the REV Hardware Client, so skip the Android Studio section of this page.<ul>
-          <li class="mdesc">Perhaps you noticed that we didn't list <a target="_blank" href="https://snap.berkeley.edu"><i>Snap!</i></a> as an example of a Blockly language. It is, in fact, the finest example of a Blockly language overall, and its "more advanced" nature, featuring object-oriented programming and other important concepts, is such that programmers who are confident in <i>Snap!</i> will likely have a better time in Java than they would dealing with the abstractions and lack of language features present in Blocks.</li>
+          <li class="mdesc">Perhaps you noticed that we didn't list <a target="_blank" href="https://snap.berkeley.edu"><i>Snap!</i></a> as an example of a Blockly language. It is, in fact, the finest example of a Blockly language overall, and its "more advanced" nature is such that programmers who are confident in <i>Snap!</i> will likely have a better time in Java than they would dealing with the abstractions and lack of language features present in Blocks.</li>
         </ul></li>
         <li>If you have fallen through all of the conditions above <b>[OR]</b> have done some programming in a text-based language and been at least reasonably confident in what you were doing, then you should consider programming in Java. This appears to be the most popular option with the widest library of support, and it allows you full access to the SDK <i class="mdesc">(Despite what REV might say, not everything is available in Blocks)</i> and Java language features. There are two environments available in which to program in Java - <b style="color: green">OnBotJava</b> and <b style="color: green">Android Studio</b> - and the best option is probably just the one your team uses. However, there are two notable advantages to Android Studio:<ul>
           <li>The code is edited from a location other than the robot itself, then the TeamCode package is built onto the robot. It is possible to create and edit code without a Control Hub on hand, which is <i>awesome</i> if you enjoy writing code at home rather than at school.</li>
-          <li>Studio can integrate with a Version Control System (VCS), such as Git <i class="mdesc">(covered below)</i> or Subversion <i class="mdesc">(coming soon)</i>. Many teams who use Studio host their code on a GitHub repository to enable all their programmers to write code from home, and the VCS lets multiple people modify the same file and have their changes safely merged together. Once everyone is back at the shop, the code can be built onto the actual robot.</li>
+          <li>Studio can integrate with a Version Control System (VCS), such as Git <i class="mdesc">(covered below)</i>. Many teams who use Studio host their code on a GitHub repository to enable all their programmers to write code from home, and the VCS lets multiple people modify the same file and have their changes safely merged together. Once everyone is back at the shop, the code can be built onto the actual robot.</li>
         </ul></li>
       </ul>
       <h5 class="theader">Setting Up and Using Android Studio</h5> - <i class="tdesc">REV Control Hubs are Android devices, and this IDE (Integrated Development Environment) is used to write and build code that runs on them.</i><ul>
-          <li><h5 class="topic">Part 1 - Installation and Configuration</h5> - <i class="tdesc">As with most programs, Android Studio (which is actually Jetbrains IDEA with some extra tools included for Android development specifically) has a guided installer, which can be found <a target="_blank" href="https://developer.android.com/studio">here</a>.</i>
+          <li><h5 class="topic">Part 1 - Installation and Configuration</h5> - <i class="tdesc">As with most programs, Android Studio (which is actually Jetbrains' "IntelliJ IDEA" with some extra tools included for Android development specifically) has a guided installer, which can be found <a target="_blank" href="https://developer.android.com/studio">here</a>.</i>
             <ul>
               <li class="material"><a target="_blank" href="https://developer.android.com/studio/install">Guided tutorial on installing Android Studio</a><i class="mathost">Android Developers (official)</i></li>
               <li>You do not need to install the "Virtual Device" (an Android phone emulator) if you are only going to use this installation for robot programming. (It cannot emulate a robot, so it is not very helpful for us.) This will save about a gigabyte of space.</li>
           </ul></li><br>
           <li><h5 class="topic">Part 2 - Basic Usage and Features</h5> - <i class="tdesc">A large IDE can be intimidating if you're not used to it, but a basic familiarity with IDEA's features will make it a lot more friendly, and over time you will find ways to make it more powerful.</i><ul>
-            <li class="material">Overview: <a target="_blank" href="ide/studiobasic.html">Brief Overview of Android Studio</a> (<a href="ide/studiobasic.html">same tab</a>)<i class="mathost">MI-FTC</i></li>
+            <li class="material">Overview: <a target="_blank" href="tutorial/s/studiobasic.html">Brief Overview of Android Studio</a> (<a href="tutorial/s/studiobasic.html">same tab</a>)<i class="mathost">MI-FTC</i></li>
             <li class="material">Reference: <a target="_blank" href="https://www.jetbrains.com/help/idea/guided-tour-around-the-user-interface.html">Guided Tour of the User Interface</a><i class="mathost">Jetbrains (official)</i></li>
             <li class="material">Visualized: <a target="_blank" href="https://www.youtube.com/@AndroidDevelopers/search?query=studio">Official Android Developers YouTube channel</a> - you can search for Android Studio information<i class="mathost">Android Developers (official) via YouTube</i></li>
           </ul></li><br>
-          <li><h5 class="topic">Part 3 - Git Integration</h5> - <i class="tdesc">Check with your returning teammates or mentors to see if this section applies to you. Many teams use Git / GitHub to track their code, but not all teams do, or they may use a different system. (If you fall into the last case, we hope to add information for other systems to the Springboard soon, but the Jetbrains materials below also have information on other ways to integrate VCS into the IDE.)</i><ul>
+          <li><h5 class="topic">Part 3 - Git Integration</h5> - <i class="tdesc">Check with your returning teammates or mentors to see if this section applies to you. Many teams use Git / GitHub to track their code, but not all teams do, or they may use a different system.</i><ul>
               <br>
               <li><h5 class="topic">Part 1 - Connect Android Studio (IDEA) to Git</h5> - <i class="tdesc">We need to tell the IDE where our code is.</i>
               <ul>
@@ -74,7 +74,7 @@
                 </ul></li><br>
               <li><h5 class="topic">Part 3 - Git from within Android Studio</h5> - <i class="tdesc">We can use Git right inside Android Studio! This is convenient - you can edit a file, go to a tab in the same editor, and stage and commit those changes.</i>
               <ul>
-                <li class="material">Overview: <a target="_blank" href="ide/studiogithub.html">Git from within Android Studio</a> (<a href="ide/studiogithub.html">same tab</a>)<i class="mathost">MI-FTC</i></li>
+                <li class="material">Overview: <a target="_blank" href="tutorial/s/studiogithub.html">Git from within Android Studio</a> (<a href="tutorial/s/studiogithub.html">same tab</a>)<i class="mathost">MI-FTC</i></li>
                 <li class="material">Comprehensive: <a target="_blank" href="https://www.jetbrains.com/help/idea/using-git-integration.html">IntelliJ tutorial for Git in IDEA</a><i class="mathost">Jetbrains (official)</i></li>
                 <li class="material">Visualized: <a target="_blank" href="https://youtu.be/rU-YifCAP2s">Video form</a><i class="mathost">MI-FTC via YouTube</i></li>
               </ul>
@@ -92,7 +92,9 @@
       <br><hr><br>
       <h5 class="theader">FtcRobotController</h5> - <i class="tdesc">The SDK created by FIRST which provides functions to interact with the robot</i>
         <ul>
-          <li><a target="_blank" href="https://ftcsim.org/ftcsim/">FTCsim</a> is a good way to experiment with code if you do not have a robot readily available.</li>
+          <li><a target="_blank" href="https://ftcsim.org/ftcsim/">FTCsim</a> is a good way to experiment with code if you do not have a robot readily available.<ul>
+			<li>Remember, if you need something to run continuously, use a <code>while (opModeIsActive()) {}</code> loop. This way, the OpMode actually stops when you tell it to. Also, a <code>while (true) {}</code> loop will cause the sim to completely hang.</li>
+		  </ul></li>
           <li>Overview: <a target="_blank" href="https://docs.revrobotics.com/duo-control/programming/hello-robot-introduction-to-programming">Hello Robot - Introduction to Programming</a><i class="mathost">REV Robotics (official)</i><ul>
             <li>Blocks <b>[OR]</b> OnBotJava: Read through the entire tutorial.</li>
             <li>Android Studio: Read through </li>
@@ -106,8 +108,8 @@
             <li>If you are at least reasonably confident in handling <a target="_blank" href="https://en.wikipedia.org/wiki/Callback_(computer_programming)">callbacks</a> (functions as objects) <b>OR</b> have ever programmed for Arduino, you will almost certainly prefer <b style="color: green">OpMode</b>.</li>
           </ul></i><ul>
             <li>Overview:<ul>
-              <li><a target="_blank" href="program/sdk/linearopmode.html">LinearOpMode</a> (<a href="program/sdk/linearopmode.html">same tab</a>)<i class="mathost">MI-FTC</i></li>
-              <li><a target="_blank" href="program/sdk/opmode.html">OpMode</a> (<a href="program/sdk/opmode.html">same tab</a>)<i class="mathost">MI-FTC</i></li>
+              <li><a target="_blank" href="tutorial/l/linearopmode.html">LinearOpMode</a> (<a href="tutorial/l/linearopmode.html">same tab</a>)<i class="mathost">MI-FTC</i></li>
+              <li><a target="_blank" href="tutorial/o/opmode.html">OpMode</a> (<a href="tutorial/o/opmode.html">same tab</a>)<i class="mathost">MI-FTC</i></li>
             </ul></li>
             <li>Reference:<ul>
               <li><a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/eventloop/opmode/OpMode.html">OpMode class</a> in the Javadoc<i class="mathost">FIRST (official) via javadoc.io</i></li>
@@ -122,6 +124,7 @@
       <p>When you can learn new things on your own, you don't need the Springboard anymore! Enjoy your time as a confident FTC programmer!</p>
         <ul>
           <li>You will need the <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc">official API (Application Programming Interface) documentation</a>. - <i class="mdesc">This tells you all the classes and methods available, what arguments they take, what they will return, and their general purpose. This covers literally everything provided to you by the FtcRobotController SDK.</i><i class="mathost">FIRST (official) via javadoc.io</i></li>
+		  <li><a target="_blank" href="https://docs.revrobotics.com/duo-control/control-system-overview/port-pinouts">REV Hub Pinouts</a>, when you want to wire and test something yourself</li>
         </ul>
         <br>
       <h5 class="theader">Additional resource compilations</h5>

@@ -11,7 +11,8 @@
     <hr><hr><hr>
     <div id="headerbox">
       <h3>Welcome to MI-FTC!</h3>
-      <p class="modtime">Last updated 7-2-22</p>
+      <p class="modtime">Last updated 7-3-23</p>
+	  <p>If you see a page modified date from 2022, it's wrong. I still haven't caught on to the new year. <i>--Medium</i></p>
     </div>
     <div id="navbox">
 		<table id="navtable">
@@ -48,6 +49,8 @@
 		<p>We link to other sources as much as possible, but sometimes the right
 			material either does not exist or is not easy to understand. In 
 			those situations, we create our own!</p>
+		<p>Currently, I (MediumAutomaton) am actively working on this thing 
+		every day. I'm pushing the day's work to GitHub nightly.</p>
 		<p>If you want to improve something, please do! As far as I can tell,
 			you should be able to check out the repo and make a pull request. I 
 			haven't nailed down all the details of how this organization works 
@@ -55,12 +58,14 @@
 		<p>If you find something wrong, please make a scene in the Issues 
 			section.</p>
 		<br>
-		<p>A random recommendation for developers of this site: Try to use 
-			relative links to site files when it makes sense. This will make it 
-			easier to test the site in a local repo. I just had a situation 
-			where Firefox grabbed an older version of the stylesheet on the 
-			currently deployed website rather than the newer one from my local 
-			repo.</p>
+		<p>A random note for developers: If you clone the repo, change the 
+			stylesheet, then load the page only to find that the style has not 
+			updated, one or both of two things has gone wrong:<ul>
+				<li>The browser cached the style, and you need to clear the page 
+					cache (Shift+Refresh, Shift+Ctrl+R on Firefox).</li>
+				<li>The page you're loading uses an absolute link to the file 
+					(https://mi-ftc.github.io/...).</li>
+			</ul></p>
     </div>
     <hr><hr><hr>
   </body>

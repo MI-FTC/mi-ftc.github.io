@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using GitHub from within Android Studio - MI-FTC</title>
+    <link href="https://mi-ftc.github.io/global.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+    <hr><hr><hr>
+    <div id="headerbox">
+      <h2 style="color:darkorange">Under Construction</h2>
+      <h3>Using Git from within Android Studio</h3>
+      <p>Coming soon: A companion tutorial for <i>connecting</i> Studio to GitHub!</p>
+      <a href="../index.html">Go Back</a>
+      <!--<br><a href="../changes.html#studiogithub">See planned changes to this page</a>-->
+    </div>
+    <hr>
+    <div id="contentbox">
+      <p>Welcome to Android Studio! (Electric Eel, because of course I install it the <i>day before</i> Flamingo comes out)</p>
+      <p>(For your convenience while viewing this page, I made the window relatively small for smaller screenshots below.)</p>
+      <br>
+      <p>We will be working with the section of the toolbar outlined in red below:</p>
+      <!-- W3Schools said to specify width and height to avoid the page flickering while loading. If it ever becomes a problem, it's one thing to try. If it's not a problem, I want browsers to have some liberty with the sizing. -->
+      <!--<img src="assets/gitoutline.png" alt="Android Studio with Git section of top toolbar outlined" width="974" height="787">-->
+      <img src="assets/gitoutline.png" alt="Android Studio with Git section of top toolbar outlined">
+      <hr>
+      <h4>Update</h4>
+      <!--<img src="assets/gitupdate.png" alt="Git Update (blue arrow pointing down-left)" width="22" height="25">-->
+      <img src="assets/gitupdate.png" alt="Git Update (blue arrow pointing down-left)">
+      <p>This button updates your local copy of the repository to match what is currently on the branch, offering the option to merge files if necessary.</p>
+      <p>Sometimes it will ask you if you would like to merge your copy with the online branch or rebase your local copy on the online branch. I usually choose Rebase, replacing my local copy with whatever is on the branch. This way they definitely match. With files, however, I usually let it merge them. Sometimes it is unable to merge and will ask you to choose between the local and online files, and I usually choose the one from the online branch. Of course, you can always use your own discretion to determine which is the best option.</p>
+      <p>If any work has been done on a different computer and committed to the branch, you will want to click this button before doing any work to make sure your local copy contains all the latest changes from the repository.</p>
+      <hr>
+      <h4>Commit</h4>
+      <!--<img src="assets/gitcommit.png" width="23" height="25">-->
+      <img src="assets/gitcommit.png">
+      <p>This button commits all staged changes to the local repository. (Changes are staged in the Commit pane, which we will cover shortly.) <i>These will not be automatically pushed to the online repository!</i></p>
+      <hr>
+      <h4>Push</h4>
+      <!--<img src="assets/gitpush.png" width="20" height="27">-->
+      <img src="assets/gitpush.png">
+      
+      <p>This button pushes all commits made since the last push out to the online repository. After a push, when anyone else runs a Git Update, their repository will be updated to match yours.</p>
+      <p>If there are any conflicts during the push, like an online file being newer than the one you're trying to push, this is a good sign that multiple people have tried to edit the same file, and you should check and coordinate to find the best solution and make sure all important changes manage to get made on the actual GitHub repository.</p>
+      <p>I do not usually commit or push from the toolbar, I usually do it from the Commit pane, which we will cover soon. You must interact with it to stage changes and write the commit message anyway, so it is often easier to just do everything there.</p>
+      <hr>
+      <!-- TODO: Toolbar Button - Show History -->
+      <!-- TODO: Toolbar Button - Rollback -->
+      <h4>The Commit Pane</h4>
+      <!--<img src="assets/commitpane.png" width="339" height="685">-->
+      <img src="assets/commitpane.png">
+      <p>Here you can add files to the repository, stage changes, commit those changes, and push them to the online repository.</p>
+      <p>The <b>Changes</b> portion of the file tree shows files which have changed since the last commit.</p>
+      <ul>
+      <li><b style="color:green">Green</b> files have been <i>changed</i> since the last commit. The file in the repository will be updated with the new changes. (If the online repository has another version of this file with some other changes made since the last commit in your local repository, when you push your file, Git will attempt to merge the changes.)</li>
+      <li><b style="color:red">Red</b> files have been <i>created</i> since the last commit. The file will be added to the repository and begin being tracked. Alternatively, you could not stage that change and leave the file unversioned. (What you would more likely want in this case is to commit the file locally, then choose not to <i>push</i> it to the online repository.)</li>
+      </ul>
+      <p>The <b>Unversioned Files</b> portion of the file tree shows files which are not tracked in the repository and are not committed. The file still exists in the same folder as the repository, but the changes made to it are not tracked and cannot be rolled back like versioned files can.</p>
+      <p>Outlined in <b style="color:red">red</b> above are the buttons to <b>Commit</b> and <b>Commit and Push</b>. The latter is more convenient most of the time, as you will usually want to push your changes to the online repository immediately, especially when you are writing code from one computer and building and testing it from another. (This is a common situation if you like to write code in the classroom and you have to test it in the shop.)</p>
+      <p>Outlined in <b style="color:green">green</b> above is the <b>Show Diff</b> button. If you want to see the changes made to a file since the last commit, select that file in the file tree then click this button. Studio will open a new tab with the old file on one side and the new file on the other. <b style="color:green">Green</b> lines have been added, <b style="color:red">Red</b> lines have been removed, and <b style="color:blue">Blue</b> lines have been unchanged (Studio usually uses this to help you find lines in both files when they don't quite scroll in perfect synchronization.)</p>
+      <hr>
+      <p>There are many more options you can experiment with if you want to optimize your workflow, but this is enough knowledge to successfully use Git and collaborate with the rest of the team.</p>
+    </div>
+    <hr><hr><hr>
+  </body>
+</html>
