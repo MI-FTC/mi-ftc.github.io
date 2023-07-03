@@ -1,3 +1,15 @@
+.copyright {
+  font-size: 8pt;
+}
+
+.modtime {
+  font-size: 8pt;
+}
+
+.changehead {
+	display: none;
+}
+
 body {
   background-color:lightgray;
 }
@@ -16,15 +28,35 @@ code {
   display: inline-block;
 }
 
+.mathost {
+  font-size: 8pt;
+  float: right;
+}
+
 
 /*
   Available topic fields:
+  h5 for category - class="theader"
   h5 - class="topic"
   i - class="tdesc"
 */
 
+.theader {
+  display: inline;
+  font-size: 12pt;
+}
+
 .topic {
   display: inline;
+  font-size: 12pt;
+}
+
+.tdesc {
+  font-size: 10pt;
+}
+
+.mdesc {
+  font-size: 10pt;
 }
 
 
@@ -49,7 +81,7 @@ code {
   color: white;
 }
 
-td {
+.navtd {
   border: 1px solid blue;
   padding: 3px;
 }
