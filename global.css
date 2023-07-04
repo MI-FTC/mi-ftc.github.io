@@ -2,19 +2,31 @@
   font-size: 8pt;
 }
 
+/* Last modified time of pages that list it */
 .modtime {
   font-size: 8pt;
 }
 
+/* The invisible headers on changes.html pages (deprecated) */
 .changehead {
 	display: none;
 }
+
+/* Font size options that conform with rest of site */
+.xsmall {
+	font-size: 8pt;
+}
+
+.small {
+	font-size: 10pt;
+}
+
 
 body {
   background-color:lightgray;
 }
 
-
+/* Makes <code> behave like <pre> but with an extra border */
 code {
   border: 1px solid black;
   padding: 5px;
@@ -22,12 +34,34 @@ code {
   white-space: pre-wrap;
 }
 
+/* Allow display of inline code */
+.inline {
+	display: inline;
+}
+
+/* Code colorization */
+.keyword {
+	font-weight: bold;
+	color: blue;
+}
+
+.annotation {
+	color: goldenrod;
+}
+
+.comment {
+	color: gray;
+}
+
+
+/* Puts more space around certain crammed links */
 .spacelink {
   margin-top: 3px;
   margin-bottom: 3px;
   display: inline-block;
 }
 
+/* The displayed hosts of materials on the Springboard */
 .mathost {
   font-size: 8pt;
   float: right;
@@ -36,9 +70,10 @@ code {
 
 /*
   Available topic fields:
-  h5 for category - class="theader"
+  h5 (for category) - class="theader"
   h5 - class="topic"
-  i - class="tdesc"
+  i (for topic) - class="tdesc"
+  i (for material) - class="mdesc"
 */
 
 .theader {
@@ -51,6 +86,9 @@ code {
   font-size: 12pt;
 }
 
+/* .tdesc and .mdesc also get used in various places around the site.
+Most uses of these outside the Springboard should really be changed to .small. 
+Some external uses (notably in download pages) make sense. Use discretion. */
 .tdesc {
   font-size: 10pt;
 }
@@ -62,6 +100,7 @@ code {
 
 /*
   Available navtable fields:
+  div - id="navbox"
   table - id="navtable"
   thead - id="navthead"
   tbody - id="navtbody"
