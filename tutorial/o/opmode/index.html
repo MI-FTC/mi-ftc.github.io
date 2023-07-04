@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpMode - MI-FTC</title>
+    <link href="https://mi-ftc.github.io/global.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+    <hr id="top"><hr><hr>
+	<div id="headerbox">
+    <h3>OpMode</h3>
+    <p>A walkthrough of the basic structure</p>
+	</div>
+	<div id="navbox">
+		<table id="navtable"><thead id="navthead">
+			<tr class="navtr"><th id="navth" colspan="4">Navigation</th></tr>
+		</thead><tbody id="navtbody">
+			<tr class="navtr"><td class="navtd"><a class="nava" href="../../../index.html">Go Home</a></td><td class="navtd"><a class="nava" href="../../l/linearopmode/index.html">This page's LinearOpMode counterpart</a></td><td class="navtd"><a class="nava" href="../../../springboard/index.html">Springboard</a></td><td class="navtd"><a class="nava" href="../../index.html">MI-FTC Tutorials Index</a></td></tr>
+		</tbody></table>
+	</div>
+	<hr>
+	<div id="contentbox">
+		<p><a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/eventloop/opmode/OpMode.html">OpMode</a> contains the subclass <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/eventloop/opmode/LinearOpMode.html">LinearOpMode</a>, meaning that LinearOpMode is actually implemented in terms of OpMode. This is explored more in (coming soon) <b>Which OpMode? Each implemented in terms of the other</b>, but right now this fact is mostly just an excuse to link to both classes in the JavaDoc. They can both do all the same things, but many people find that their different structures cater to different use cases. Keep that in mind - don't get caught up in one! Look at both and determine which is the best to use for each program.</p>
+		<p>Here is the barebones structure of an OpMode (with Android Studio (Light theme) colorization):</p>
+		<code>
+<span class="keyword">package</span> org.firstinspires.ftc.teamcode;
+
+<span class="keyword">import</span> com.qualcomm.robotcore.eventloop.opmode.<span class="annotation">TeleOp</span>;
+<span class="keyword">import</span> com.qualcomm.robotcore.eventloop.opmode.OpMode;
+
+<span class="comment">//or @Autonomous</span>
+<span class="annotation">@TeleOp</span>(name="", group="")
+<span class="keyword">public class</span> <span class="comment">BoilerPlate_OpMode</span> <span class="keyword">extends</span> OpMode {
+
+    <span class="comment">//Put your early stage initialization code here</span>
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> init() {
+
+        <span class="comment">//Put your later stage initialization code here</span>
+
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> init_loop() {
+
+        <span class="comment">//Put any code here which should loop until Start is pressed</span>
+
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> start() {
+
+        <span class="comment">//Put any code here which should run only once after Start is pressed</span>
+
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> loop() {
+
+        <span class="comment">//Put any code here which should loop until Stop is pressed</span>
+        
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> stop() {
+
+        <span class="comment">//Put anything here that needs to run once after Stop is pressed</span>
+
+    }
+}
+		</code>
+		<p>That might tell you everything you need to know, but if it doesn't, we're going to walk through it.</p>
+		<hr>
+		<code><span class="keyword">package</span> org.firstinspires.ftc.teamcode;</code>
+		<p>This line tells the compiler that this class is part of the TeamCode package. This is important becuase only TeamCode gets built onto the device, so we need to be in that package to have our program appear on the robot controller.</p>
+		<br><br>
+		<code><span class="keyword">import</span> com.qualcomm.robotcore.eventloop.opmode.OpMode;
+<span class="keyword">import</span> com.qualcomm.robotcore.eventloop.opmode.<span class="annotation">TeleOp</span>;</code>
+		<p>These lines import the class we are going to extend, OpMode, and the annotation we are going to apply above it, <span class="annotation">@TeleOp</span>, from the parent package "opmode".</p>
+		<p>We do not have to generate these import statements ourselves. When we create the next two lines, Studio will ask us if we want it to generate the import lines for us. Press Alt+Enter to accept its help.</p>
+		<br><br>
+		<code><span class="annotation">@TeleOp</span>(name="", group="")</code>
+		<p>This is where the first import statement above becomes important. Notice that this line does not end with a semicolon. This is not a normal line of code. Rather, it is a directive to the compiler, telling it to handle this class in a special way (in this case, to add it to the registry of user-accessible TeleOps). The name field is required, and the group field is optional.</p>
+		<p><span class="annotation">@TeleOp</span> creates a TeleOp, while <span class="annotation">@Autonomous</span> creates an autonomous OpMode. You can also add <span class="annotation">@Disabled</span> below this to prevent the OpMode from being accessible on the Driver Station.</p>
+		<br><br>
+		<code><span class="keyword">public class</span> <span class="comment">BoilerPlate_OpMode</span> <span class="keyword">extends</span> OpMode {</code>
+		<p>The name of the class must exactly match the name of the file you created (case-sensitive!) to not generate a build error. We are creating the class which contains our OpMode, and it extends the OpMode class in the SDK so we can use or override its functions.</p>
+		<br><br>
+		<code><span class="comment">//Put your early stage initialization code here</span></code>
+		<p>This is the place to initialize all the variables you will use, notably references to hardware devices.</p>
+		<br><br>
+		<code><span class="annotation">@Override</span>
+<span class="keyword">public void</span> init() {</code>
+		<p>We are overriding a method (a.k.a. function) contained within the OpMode class. Using init() as an example, when you click the <b>Init</b> button to start an OpMode, the robot controller calls the init() method. By default, init() is empty, so we need to override it to tell the robot controller that the method actually contains <i>this</i> code instead.</p>
+		<b>This method is <span style="color:red">required</span>.</b>
+		<p>init() is called once when the <b>Init</b> button is pressed on the Driver Station.</p>
+		<p>This is the place to get your hardware devices from the hardwareMap calls and set any of their options that you need, such as motor directions. <i class="tdesc">(If you're not familiar with object-oriented programming, it looks like you're storing a hardware device, which is an object, in a variable, but really you're storing a <i>reference</i> to it. When later code looks at that variable, the variable tells it where the device it wants to interact with is located.)</i></p>
+		<br><br>
+		<code><span class="annotation">@Override</span>
+<span class="keyword">public void</span> init_loop() {</code>
+		<b>This method is <span style="color:green">optional</span>.</b>
+		<p>init_loop() is called repeatedly when the <b>Init</b> button is pressed until the <b>Start</b> button is pressed or the OpMode is otherwise aborted.</p>
+		<br><br>
+		<code><span class="annotation">@Override</span>
+<span class="keyword">public void</span> start() {</code>
+		<b>This method is <span style="color:green">optional</span>.</b>
+		<p>start() is called once when the <b>Start</b> button is pressed.</p>
+		<br><br>
+		<code><span class="annotation">@Override</span>
+<span class="keyword">public void</span> loop() {</code>
+		<b>This method is <span style="color:red">required</span>.</b>
+		<p>loop() is called repeatedly when the <b>Start</b> button is pressed until the <b>Stop</b> button is pressed or the OpMode is otherwise aborted.</p>
+		<br><br>
+		<code><span class="annotation">@Override</span>
+<span class="keyword">public void</span> stop() {</code>
+		<b>This method is <span style="color:green">optional</span>.</b>
+		<p>stop() is called once when the <b>Stop</b> button is pressed.</p>
+		<p>If you need to clean anything up when the OpMode is stopped, do it here.</p>
+		<hr>
+		<p>Follow the comments in the example above (also downloadable as a <a href="https://mi-ftc.github.io/download/boilerplate/index.html">boilerplate template</a>) to determine where to place the various sections of your code.</p>
+		<a href="#top">Back to Top</a>
+    <hr><hr><hr>
+  </body>
+</html>

@@ -10,13 +10,13 @@
     <hr id="top"><hr><hr>
 	<div id="headerbox">
     <h3>LinearOpMode</h3>
-    <p>A walkthrough of the basic structure and key differences from OpMode</p>
+    <p>A walkthrough of the basic structure</p>
 	</div>
 	<div id="navbox">
 		<table id="navtable"><thead id="navthead">
 			<tr class="navtr"><th id="navth" colspan="4">Navigation</th></tr>
 		</thead><tbody id="navtbody">
-			<tr class="navtr"><td class="navtd"><a class="nava" href="../../../index.html">Go Home</a></td><td class="navtd">(coming soon) This page's OpMode counterpart</td><td class="navtd"><a class="nava" href="../../../springboard/index.html">Springboard</a></td><td class="navtd"><a class="nava" href="../../index.html">MI-FTC Tutorials Index</a></td></tr>
+			<tr class="navtr"><td class="navtd"><a class="nava" href="../../../index.html">Go Home</a></td><td class="navtd"><a class="nava" href="../../o/opmode/index.html">This page's OpMode counterpart</a></td><td class="navtd"><a class="nava" href="../../../springboard/index.html">Springboard</a></td><td class="navtd"><a class="nava" href="../../index.html">MI-FTC Tutorials Index</a></td></tr>
 		</tbody></table>
 	</div>
 	<hr>
@@ -26,61 +26,71 @@
 		<code>
 <b style="color:blue">package</b> org.firstinspires.ftc.teamcode;
 
-<b style="color:blue">import</b> com.qualcomm.robotcore.eventloop.opmode.<b style="color:goldenrod">TeleOp</b>;
-<b style="color:blue">import</b> com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+<b class="keyword">import</b> com.qualcomm.robotcore.eventloop.opmode.<span class="annotation">TeleOp</span>;
+<b class="keyword">import</b> com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
-<span style="color:gray">//or @Autonomous</span>
-<b style="color:goldenrod">@TeleOp</b>(name="", group="")
-<b style="color:blue">public</b> <b class="keyword">class</b> <span style="color:gray">BoilerPlate_LinearOpMode</span> <b style="color:blue">extends</b> LinearOpMode {
+<span class="comment">//or @Autonomous</span>
+<span class="annotation">@TeleOp</span>(name="", group="")
+<b class="keyword">public</b> <b class="keyword">class</b> <span class="comment">BoilerPlate_LinearOpMode</span> <b class="keyword">extends</b> LinearOpMode {
 
-    <b style="color:goldenrod">@Override</b>
-    <b style="color:blue">public void</b> runOpMode() {
+    <span class="comment">//Put your early stage initialization code here</span>
+
+    <b class="annotation">@Override</b>
+    <b class="keyword">public void</b> runOpMode() {
 	
-        <span style="color:gray">//Put your initialization code here</span>
+        <span class="comment">//Put your initialization code here</span>
 		
         waitForStart();
 		
-		<span style="color:gray">//Put any code here which should run only once after Start is pressed</span>
+        <span class="comment">//Put any code here which should run only once after Start is pressed</span>
 
-        <b style="color:blue">while</b> (opModeIsActive()) {
+        <b class="keyword">while</b> (opModeIsActive()) {
 		
-            <span style="color:gray">//Put any code here which should loop until Stop is pressed</span>
+            <span class="comment">//Put any code here which should loop until Stop is pressed</span>
 			
-			idle(); <span style="color:gray">allow the system to do background tasks (otherwise it may crash)</span>
+            idle(); <span class="comment">//allow the system to do background tasks (otherwise it may crash)</span>
         }
 		
-		<span style="color:gray">//Put anything here that needs to run once after Stop is pressed</span>
+        <span class="comment">//Put anything here that needs to run once after Stop is pressed</span>
 		
     }
 }
 		</code>
 		<p>That might tell you everything you need to know, but if it doesn't, we're going to walk through it.</p>
 		<hr>
-		<code><b style="color:blue">package</b> org.firstinspires.ftc.teamcode;</code>
+		<code><b class="keyword">package</b> org.firstinspires.ftc.teamcode;</code>
 		<p>This line tells the compiler that this class is part of the TeamCode package. This is important becuase only TeamCode gets built onto the device, so we need to be in that package to have our program appear on the robot controller.</p>
 		<br><br>
-		<code><b style="color:blue">import</b> com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-<b style="color:blue">import</b> com.qualcomm.robotcore.eventloop.opmode.TeleOp;</code>
-		<p>These lines import the class we are going to extend, LinearOpMode, and the annotation we are going to apply above it, @TeleOp, from the parent package "opmode".</p>
+		<code><b class="keyword">import</b> com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+<b class="keyword">import</b> com.qualcomm.robotcore.eventloop.opmode.<span class="annotation">TeleOp</span>;</code>
+		<p>These lines import the class we are going to extend, LinearOpMode, and the annotation we are going to apply above it, <span class="annotation">@TeleOp</span>, from the parent package "opmode".</p>
 		<p>We do not have to generate these import statements ourselves. When we create the next two lines, Studio will ask us if we want it to generate the import lines for us. Press Alt+Enter to accept its help.</p>
 		<br><br>
-		<code><b style="color:goldenrod">@TeleOp</b>(name="", group="")</code>
-		<p>This is where e first import statement above becomes important. Notice that this line does not end with a semicolon. This is not a normal line of code. Rather, it is a directive to the compiler, telling it to handle this class in a special way (in this case, to add it to the registry of user-accessible TeleOps). The name field is required, and the group field is optional.</p>
-		<p><b style="color:goldenrod">@TeleOp</b> creates a TeleOp, while <b style="color:goldenrod">@Autonomous</b> creates an autonomous OpMode. You can also add <b style="color:goldenrod">@Disabled</b> below this to prevent the OpMode from being accessible on the Driver Station.</p>
+		<code><b class="annotation">@TeleOp</b>(name="", group="")</code>
+		<p>This is where the first import statement above becomes important. Notice that this line does not end with a semicolon. This is not a normal line of code. Rather, it is a directive to the compiler, telling it to handle this class in a special way (in this case, to add it to the registry of user-accessible TeleOps). The name field is required, and the group field is optional.</p>
+		<p><span class="annotation">@TeleOp</span> creates a TeleOp, while <span class="annotation">@Autonomous</span> creates an autonomous OpMode. You can also add <span class="annotation">@Disabled</span> below this to prevent the OpMode from being accessible on the Driver Station.</p>
 		<br><br>
-		<code><b style="color:blue">public class</b> <span style="color:gray">BoilerPlate_LinearOpMode</span> <b style="color:blue">extends</b> LinearOpMode {</code>
+		<code><b class="keyword">public class</b> <span class="comment">BoilerPlate_LinearOpMode</span> <b class="keyword">extends</b> LinearOpMode {</code>
 		<p>The name of the class must exactly match the name of the file you created (case-sensitive!) to not generate a build error. We are creating the class which contains our OpMode, and it extends the LinearOpMode class in the SDK so we can use or override its functions.</p>
 		<br><br>
-		<code><b style="color:goldenrod">@Override</b>
-<b style="color:blue">public void</b> runOpMode() {</code>
+		<code><span class="comment">//Put your early stage initialization code here</span></code>
+		<p>This is the place to initialize all the variables you will use, notably references to hardware devices. <i class="tdesc">(If you're not familiar with object-oriented programming, it looks like you're storing a hardware device, which is an object, in a variable, but really you're storing a <i>reference</i> to it. When later code looks at that variable, the variable tells it where the device it wants to interact with is located.)</i></p>
+		<br><br>
+		<code><b class="annotation">@Override</b>
+<b class="keyword">public void</b> runOpMode() {</code>
 		<p>We are overriding a method (a.k.a. function) contained within the LinearOpMode class. When you click the <b>Init</b> button to start a LinearOpMode, the robot controller calls the runOpMode() method. By default, runOpMode() just throws an <a target="_blank" href="https://developer.android.com/reference/java/lang/InterruptedException.html">InterruptedException</a>, so we need to override it to tell the robot controller that the method actually contains <i>this</i> code instead.</p>
 		<br><br>
 		<code>waitForStart();</code>
 		<p>This method tells the robot controller to wait until we have pressed the <b>Start</b> button before running the rest of the code. Everything before this method is called runs after the <b>Init</b> button is pressed, and everything after it runs after the <b>Start</b> button is pressed.</p>
+		<p>Before you call waitForStart(), get your hardware devices from the hardwareMap and set any of their options that you need, such as motor directions.</p>
 		<br><br>
-		<code><b style="color:blue">while</b> (opModeIsActive()) {</code>
+		<code><b class="keyword">while</b> (opModeIsActive()) {</code>
 		<p>You do not necessarily need this loop. Especially in an autonomous OpMode, you may only want your code to run once. In that case, just put it under the <i>waitForStart();</i> method, and it will run once before stopping. In a TeleOp, however, you usually want to continually poll the controllers and sensors and continue running until the <b>Stop</b> button is pressed. <i>opModeIsActive()</i> returns <i>true</i> from the time when the <b>Start</b> button is pressed until the OpMode is stopped (either because the <b>Stop</b> button was pressed or there was a fatal error), so any code inside this loop will run continuously until the OpMode is stopped.</p>
 		<hr>
+		<code>idle();</code>
+		<p>The OpMode is running on its own thread, and this method causes the thread to <i>idle</i> for a bit to allow the system and SDK to carry out other background tasks. If you don't call this at the end of each loop, the SDK might not have enough time to do its own things, and it may crash randomly.</p>
+		<hr>
+		<p>Follow the comments in the example above (also downloadable as a <a href="https://mi-ftc.github.io/download/boilerplate/index.html">boilerplate template</a>) to determine where to place the various sections of your code.</p>
 		<a href="#top">Back to Top</a>
     <hr><hr><hr>
   </body>
