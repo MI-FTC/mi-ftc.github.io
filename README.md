@@ -5,6 +5,8 @@ If you see a page modified date from 2022, it's wrong. I still haven't caught on
 |                                  Navigation                                 |  
 | [Go to Home Page](index.html) | [See Planned Changes to the Website](changes.html) | [Which materials are hosted here?](tutorial/mine.html) |  
 
+  I only realized days after setting everything up that the name *MI-FTC* could be a bit confusing. This site is not actually associated with the state of Michigan, this name is just an unhappy accident. My imaginary company is abbreviated as MI-LLC, and since I've gotten used to setting things up under that name, I named this site MI-FTC. Hopefully this disclaimer dispels any potential confusion.  
+  
   
 Here lies a small assortment of FTC programming resources, most notably the [Springboard](springboard/index.html)  
 The [HTML README](README.html) is a (suboptimal) example of how we format and lay out these pages.  
