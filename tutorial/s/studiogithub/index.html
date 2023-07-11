@@ -12,18 +12,18 @@
       <h2 style="color:darkorange">Under Construction</h2>
       <h3>Using Git from within Android Studio</h3>
       <p>Coming soon: A companion tutorial for <i>connecting</i> Studio to GitHub!</p>
+      <span class="modtime">Last modified 7-10-23</span>
       <a href="../index.html">Go Back</a>
       <!--<br><a href="../changes.html#studiogithub">See planned changes to this page</a>-->
     </div>
     <hr>
     <div id="contentbox">
       <p>Welcome to Android Studio! (Electric Eel, because of course I install it the <i>day before</i> Flamingo comes out)</p>
-      <p>(For your convenience while viewing this page, I made the window relatively small for smaller screenshots below.)</p>
       <br>
       <p>We will be working with the section of the toolbar outlined in red below:</p>
       <!-- W3Schools said to specify width and height to avoid the page flickering while loading. If it ever becomes a problem, it's one thing to try. If it's not a problem, I want browsers to have some liberty with the sizing. -->
       <!--<img src="assets/gitoutline.png" alt="Android Studio with Git section of top toolbar outlined" width="974" height="787">-->
-      <img src="assets/gitoutline.png" alt="Android Studio with Git section of top toolbar outlined">
+      <img src="assets/gitoutline.png" alt="Studio with Git toolbar outlined">
       <hr>
       <h4>Update</h4>
       <!--<img src="assets/gitupdate.png" alt="Git Update (blue arrow pointing down-left)" width="22" height="25">-->
@@ -34,22 +34,28 @@
       <hr>
       <h4>Commit</h4>
       <!--<img src="assets/gitcommit.png" width="23" height="25">-->
-      <img src="assets/gitcommit.png">
+      <img src="assets/gitcommit.png" alt="Commit button (green checkmark)">
       <p>This button commits all staged changes to the local repository. (Changes are staged in the Commit pane, which we will cover shortly.) <i>These will not be automatically pushed to the online repository!</i></p>
       <hr>
       <h4>Push</h4>
       <!--<img src="assets/gitpush.png" width="20" height="27">-->
-      <img src="assets/gitpush.png">
+      <img src="assets/gitpush.png" alt="Push button (green arrow pointing up-right">
       
       <p>This button pushes all commits made since the last push out to the online repository. After a push, when anyone else runs a Git Update, their repository will be updated to match yours.</p>
       <p>If there are any conflicts during the push, like an online file being newer than the one you're trying to push, this is a good sign that multiple people have tried to edit the same file, and you should check and coordinate to find the best solution and make sure all important changes manage to get made on the actual GitHub repository.</p>
       <p>I do not usually commit or push from the toolbar, I usually do it from the Commit pane, which we will cover soon. You must interact with it to stage changes and write the commit message anyway, so it is often easier to just do everything there.</p>
       <hr>
-      <!-- TODO: Toolbar Button - Show History -->
-      <!-- TODO: Toolbar Button - Rollback -->
+      <h4>Show History</h4>
+      <img src="gitshowhistory.png" alt="Show History button (a clock)">
+      <p>This button openes the Git pane at the bottom and shows the log of the changes made to the currently opened file in each commit. You can select the <b>Log</b> tag in the pane to see the log for the entire project.</p>
+      <hr>
+      <h4>Rollback</h4>
+      <img src="gitrollback.png" alt="Rollback button (an Undo arrow)">
+      <p>This button allows you to undo the last commit, restoring the files to their previous states. You can choose to only rollback certain files if you wish, but they are all selected by default.</p>
+      <hr>
       <h4>The Commit Pane</h4>
       <!--<img src="assets/commitpane.png" width="339" height="685">-->
-      <img src="assets/commitpane.png">
+      <img src="assets/commitpane.png" alt="the Commit pane (on the left)">
       <p>Here you can add files to the repository, stage changes, commit those changes, and push them to the online repository.</p>
       <p>The <b>Changes</b> portion of the file tree shows files which have changed since the last commit.</p>
       <ul>
@@ -58,9 +64,11 @@
       </ul>
       <p>The <b>Unversioned Files</b> portion of the file tree shows files which are not tracked in the repository and are not committed. The file still exists in the same folder as the repository, but the changes made to it are not tracked and cannot be rolled back like versioned files can.</p>
       <p>Outlined in <b style="color:red">red</b> above are the buttons to <b>Commit</b> and <b>Commit and Push</b>. The latter is more convenient most of the time, as you will usually want to push your changes to the online repository immediately, especially when you are writing code from one computer and building and testing it from another. (This is a common situation if you like to write code in the classroom and you have to test it in the shop.)</p>
-      <p>Outlined in <b style="color:green">green</b> above is the <b>Show Diff</b> button. If you want to see the changes made to a file since the last commit, select that file in the file tree then click this button. Studio will open a new tab with the old file on one side and the new file on the other. <b style="color:green">Green</b> lines have been added, <b style="color:red">Red</b> lines have been removed, and <b style="color:blue">Blue</b> lines have been unchanged (Studio usually uses this to help you find lines in both files when they don't quite scroll in perfect synchronization.)</p>
+      <p>Outlined in <b style="color:green">green</b> above is the <b>Show Diff</b> button. If you want to see the changes made to a file since the last commit, select that file in the file tree then click this button. Studio will open a new tab with the file as it was last committed on one side and the current file on the other.</p>
+      <img src="assets/diffpane.png" alt="Android Studio show diff tab (a tab in the editing section)">
+      <p><b style="color:green">Green</b> lines have been added, <b style="color:red">Gray</b> lines on the original side have been removed, and <b style="color:blue">Blue</b> lines have been unchanged (Studio usually uses this to help you find lines in both files when they don't line up horizontally, as seen in the image above.)</p>
       <hr>
-      <p>There are many more options you can experiment with if you want to optimize your workflow, but this is enough knowledge to successfully use Git and collaborate with the rest of the team.</p>
+      <p>There are many more options you can experiment with if you want to optimize your workflow, but this is enough knowledge to successfully use Git and collaborate with the rest of the team. If you want to get more advanced, you might also want to think about using Git from the Terminal</p>
     </div>
     <hr><hr><hr>
   </body>

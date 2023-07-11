@@ -58,6 +58,15 @@ code {
 	color: green;
 }
 
+/* How to display a specific named item or attribute */
+.specific {
+    font-weight: bold;
+    color: green;
+}
+
+.section {
+    border: 1px solid black;
+}
 
 /* Puts more space around certain crammed links */
 .spacelink {
