@@ -37,6 +37,7 @@ code {
 /* Allow display of inline code */
 .inline {
 	display: inline;
+  padding: 2px;
 }
 
 /* Code colorization */
@@ -66,6 +67,7 @@ code {
 
 .section {
     border: 1px solid black;
+    margin: 8px;
 }
 
 /* Puts more space around certain crammed links */

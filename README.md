@@ -1,5 +1,5 @@
 ## Welcome to MI-FTC!  
-*Last updated 7-10-23*  
+*Last updated 7-11-23*  
 
 |                                  Navigation                                 |  
 | [Go to Home Page](index.html) | [See Planned Changes to the Website](changes.html) | [Which materials are hosted here?](tutorial/mine.html) |  
@@ -16,4 +16,4 @@ And by the way, nothing is actually written in Java... but GitHub has picked up 
   
 A random note for developers: If you clone the repo, change the stylesheet, then load the page only to find that the style has not updated, one or both of two things has gone wrong:
 - The browser cached the style, and you need to clear the page cache (Shift+Refresh, Shift+Ctrl+R on Firefox).
-- The page you're loading uses an absolute link to the file (https://mi-ftc.github.io/...) and the old version is still deployed on GitHub Pages.
+- The page you're loading uses an absolute link to the file (https://mi-ftc.github.io/...), so is receiving the deployed version of the file rather than the local version.
