@@ -59,6 +59,11 @@ code {
 	color: green;
 }
 
+.field {
+  font-weight: bold;
+  color: indigo;
+}
+
 /* How to display a specific named item or attribute */
 .specific {
     font-weight: bold;

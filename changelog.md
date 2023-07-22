@@ -27,3 +27,8 @@ one. It has just eluded the creation of a changelog entry due to time pressures.
 - Removed the Blog in favor of changelog.md  
 - Cleaned up the Springboard code for readability and so tags are closed in
 order  
+  
+### 7-21-23:  
+Summary: Add and revise content  
+- Revised wording in the "Drivetrain Motor Reversal" tutorial  
+- New code colorization CSS class - class="field" renders bold and indigo  

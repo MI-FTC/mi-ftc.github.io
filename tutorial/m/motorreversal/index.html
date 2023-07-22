@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drivetrain Motor Reversal - MI-FTC</title>
+    <title>Motor Directions on Drivetrains - MI-FTC</title>
     <link href="../../../global.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
@@ -12,6 +12,7 @@
       <h3>Motor Directions on Drivetrains</h3>
       <p>Why do the motors on one side of a robot car need to be inverted?</p>
     </div>
+    <span class="modtime">Last Updated 7-21-23</span>
     <div id="navbox">
       <table id="navtable">
         <thead id="navthead">
@@ -24,28 +25,26 @@
     </div>
 	<hr>
     <div id="contentbox">
-	  <p>A relevant fact: The standard way to see which direction a motor is turning is to look down on the motor from the top, <i>not from the perspective of the motor</i>. Those methods give opposite directions, so this is important.</p>
+	  <p>The standard way to see which direction a motor is turning is to look down on the motor from the top, <i>not from the perspective of the motor</i>. Those methods give opposite directions, so this is important.</p>
       <p>Let's imagine that we want to make a robot car with two motors, one on each side, to allow for forwards and backwards movement as well as turns.
-		We grab two motors, both of which spin clockwise (as an example; many FTC motors actually spin counterclockwise) when powered:</p>
+		We grab two motors, both of which spin clockwise when powered (as an example; many FTC motors actually spin counterclockwise):</p>
 	  <img src="assets/twoclockwise.svg" alt="Two motors spinning clockwise">
-	  <p>This is great! We'll put one on each side of the robot, and if we give both motors positive power, then it should drive forward, right?</p>
+	  <p>We'll put one on each side of the robot, and if we give both motors positive power, then it should drive forward, right?</p>
 	  <img src="assets/sidebyside.svg" alt="Two motors, both spinning clockwise, facing away from each other - one is turning towards the front of the robot and the other is turning towards the back - if you think about this for a bit or make the motions with your hands, you can imagine what's happening here.">
-	  <p>Both motors are still spinning clockwise, but one is spinning towards the front of the robot and the other is spinning towards the back, so our robot is turning in circles.
-		Now that they are facing opposite directions, the clock from the perspective of one motor is flipped compared to the clock from the perspective of the other motor.
-		If you can't grasp that image, try taking a coin, holding it to one side of you, and noting which side of the coin is facing you. <i>Without rotating the coin</i>, move it to the other side.
-		Now the other side of the coin is facing you.</p>
+	  <p>One motor is spinning towards the front of the robot and the other is spinning towards the back, so our robot is turning in circles.
+		If you look closely, you will notice that they are both still turning clockwise. The imaginary clock from the perspective of each motor is flipped relative to the other.
 	  <p>To solve this problem, we will determine which side of the robot is the front and reverse the motor which is spinning towards the back.
 		For FTC, this is done during initialization when we set the direction of our motor:</p>
 		<code><i>motor</i>.setDirection(DcMotor.Direction.REVERSE);</code>
 		<p>It's probably helpful to manually set the directions of all the motors during initialization so its clear to see.</p>
 <!-- Unindented here to make it unindented when rendered (could this be fixed in CSS?) -->
-<code>public void init() {
+<code><span class="keyword">public void</span> init() {
 	...
 	 
-	 leftFront.setDirection(DcMotor.Direction.REVERSE);
-	rightFront.setDirection(DcMotor.Direction.FORWARD);
-	  leftBack.setDirection(DcMotor.Direction.REVERSE);
-	 rightBack.setDirection(DcMotor.Direction.FORWARD);
+	 <span class="field">leftFront</span>.setDirection(DcMotor.Direction.<span class="field"><i>REVERSE</i></span>);
+	<span class="field">rightFront</span>.setDirection(DcMotor.Direction.<span class="field"><i>FORWARD</i></span>);
+	  <span class="field">leftBack</span>.setDirection(DcMotor.Direction.<span class="field"><i>REVERSE</i></span>);
+	 <span class="field">rightBack</span>.setDirection(DcMotor.Direction.<span class="field"><i>FORWARD</i></span>);
 }
 </code>
 		<p>Now our wheels spin the same way!</p>

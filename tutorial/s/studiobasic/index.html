@@ -11,7 +11,7 @@
     <div id="headerbox">
       <h3>Brief Overview of Android Studio</h3>
       <p>There's only a couple important things to know to start writing and testing code for FTC.</p>
-      <span class="modtime">Last updated 7-10-23</span>
+      <span class="modtime">Last updated 7-21-23</span>
     </div>
     <div id="navbox">
       <table id="navtable"><thead id="navthead">
@@ -21,7 +21,16 @@
       </tbody></table>
     </div><hr>
     <div id="contentbox">
-      <p>Welcome to Android Studio!</p>
+      <p>When you first open Android Studio, you will be greeted with a welcome screen:</p>
+      <img src="assets/studiowelcome.jpg">
+      <p>If this installation has never been used before, it might have three large square buttons instead. This installation has had three projects created in it, which are displayed in a list. Above that list is a search box and three buttons - <span class="specific">New Project</span>, <span class="specific">Open</span>, and <span class="specific">Get from VCS</span>. For FTC, it is unlikely we will use <span class="specific">New Project</span> because we need to write our code inside the FtcRobotController project.</p>
+      <p>FtcRobotController is found at <a target="_blank" href="https://github.com/FIRST-Tech-Challenge/FtcRobotController">https://github.com/FIRST-Tech-Challenge/FtcRobotController</a>. There are three ways to get the project into Studio:
+        <ul>
+          <li><b>Avoid Git entirely:</b> Go to <span class="specific">Releases</span>, download and extract the source code archive, then open the resulting folder as a project in Studio.</li>
+          <li><b>Get the project from GitHub:</b> Click the green <span class="specific">Code</span> dropdown towards the upper-right, and paste the URL into Studio's <span class="specific">Get from VCS</span> menu. Make sure to select Git as the version control system. Studio will clone it into a new local project. <i class="small">Note that you cannot push to the official repository, so this project will be accessible on that machine only unless you put it on a file server or something!</i></li>
+          <li><b>Use your own GitHub repository:</b> A good way to make your own GitHub repository is to fork FtcRobotController. Try not to modify the Master branch if you can help it. This way, you can update your repository from the official one and continue to use it across seasons. Studio should have a <span class="specific">GitHub</span> option on the sidebar in the <span class="specific">Get from VCS</span> menu. Sign in with an account that has access to the repository, and you should be able to select it from the resulting list. Do be warned that Studio might want you to sign in with the account that actually owns the repository.</li>
+        </ul>
+      If you are using either of the GitHub options, note that Studio does not come with an installation of Git, so you may need to install it yourself. It can be found at <a target="_blank" href="http://git-scm.org">http://git-scm.org</a>.</p>
       <img src="assets/studiofullsmallmarked.jpg">
       <hr>
       <p>Your code appears in the large textbox to the right. The large menu to the left of it is the Projects pane. This is one of many panes you can select from the small strip to the far left. Double-clicking a file will open it as a new tab in the editing box. Tabs appear as a small strip immediately above this box. As with most text editors, [Ctrl]+[S] will save all open files.</p>
