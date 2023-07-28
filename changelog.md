@@ -6,7 +6,7 @@ sections. No substantial work on the Springboard today.
 - Wrote the first blog article. The blog lives under the "extraneous" folder.  
 - Added the Downloadable / Printable Materials section.  
 - Brought over the existing Android Studio tutorials from the old staging site  
-- Wrote two new guides on the basic structures of OpModes created by extending
+- Wrote two new guides on the basic structures of OpModes created by extending 
 OpMode and LinearOpMode  
 - Added some more features to global.css:  
   - Standard font size options  
@@ -22,13 +22,18 @@ OpMode and LinearOpMode
   - Improved comments to make the purpose of classes more apparent  
   
 ### 7-11-23:  
-Summary: Work has been occurring in the days between the last entry and this
+Summary: Work has been occurring in the days between the last entry and this 
 one. It has just eluded the creation of a changelog entry due to time pressures.  
 - Removed the Blog in favor of changelog.md  
-- Cleaned up the Springboard code for readability and so tags are closed in
+- Cleaned up the Springboard code for readability and so tags are closed in 
 order  
   
 ### 7-21-23:  
 Summary: Add and revise content  
 - Revised wording in the "Drivetrain Motor Reversal" tutorial  
 - New code colorization CSS class - class="field" renders bold and indigo  
+- Added content to the Basics of Android Studio tutorial  
+  
+### 7-27-23:  
+- Actually deleted the blog (the deletions were not staged before)  
+- Misc. additions to the Basics of Android Studio tutorial and the Springboard  
