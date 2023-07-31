@@ -24,7 +24,7 @@
       </tbody></table>
       </div>
       
-      <span class="modtime">Last updated 7-27-23</span>
+      <span class="modtime">Last updated 7-30-23</span>
     </div>
     <hr>
     <div id="legendbox">
@@ -142,8 +142,9 @@
       
       <h5 class="theader">Java</h5> - <i class="tdesc">Learn the basics of the language and Object-Oriented Programming (OOP)</i>
       <ul>
-        <li class="material"><b>Overview:</b> <a target="_blank" href="https://www.w3schools.com/java/default.asp">W3Schools Java Tutorial</a> <i class="mdesc">(Go through the "Tutorial" and "Methods" sections, then stop. The Oracle tutorial below ("For your second season") covers the remaining concepts more effectively.)</i><i class="mathost">W3Schools</i>
+        <li class="material"><b>Overview:</b> <a target="_blank" href="https://www.w3schools.com/java/default.asp">W3Schools Java Tutorial</a><i class="mathost">W3Schools</i>
           <ul>
+            <li>Go through the "Tutorial" and "Methods" sections, then stop. The Oracle tutorial below ("For your second season") covers the remaining concepts more effectively.</li>
             <li>If you want to try some of the exercises yourself but don't want to install the Java runtime, <a target="_blank" href="https://replit.com/">Replit</a> lets you write and run code online for free. <i class="mdesc">(At the time of writing, it's all branded up for GPT integration. You can safely ignore all that.)</i> Alternatively, you could just wait until we start writing code for a robot.</li>
           </ul>
         </li>
@@ -155,21 +156,24 @@
       
       <h5 class="theader">FtcRobotController</h5> - <i class="tdesc">The SDK created by FIRST which provides functions to interact with the robot</i>
         <ul>
-          <li><a target="_blank" href="https://ftcsim.org/ftcsim/">FTCsim</a> is a good way to start experimenting with code without needing to get hold of a real robot. If your team does not have a lot of robots, this can give every programmer a virtual robot to start learning with until the competition robot is ready.
+          <!--<li><a target="_blank" href="https://ftcsim.org/ftcsim/">FTCsim</a> could be a good way to start experimenting with (autonomous) code without needing to get hold of a real robot. It is very definitely incomplete and you should expect bugs, but hopefully our use of it motivates its continued development. If your team does not have a lot of robots, this can give every programmer a virtual robot to start learning with until the competition robot is ready.
             <ul>
+              <li></li>
               <li>Remember, if you need something to run continuously, use a <code class="inline"><span class="keyword">while</span> (opModeIsActive()) {}</code> loop. This way, the OpMode actually stops when you tell it to. Also, a <code class="inline"><span class="keyword">while</span> (true) {}</code> loop will cause the sim to completely hang.</li>
             </ul>
-          </li>
+          </li>-->
+          <li>You can't learn how to do something right if you can't verify that your work is correct, so you will want to have some way of testing your code. Throughout the entire season, your team will want to maintain some secondary hardware setup to test things without having to fight over who gets the only robot today. A robot from a previous season or even just a small collection of loose parts (sensors, actuators, and wires) will work well. The <a target="_blank" href="https://docs.revrobotics.com/duo-control/control-system-overview/port-pinouts">REV Control Hub port pinouts</a> should help you wire it up. Another option is <a target="_blank" href="simulators.html">simulators</a>... (<a href="simulators.html">same tab</a>)</li>
           <li><b>Overview:</b> <a target="_blank" href="https://docs.revrobotics.com/duo-control/programming/hello-robot-introduction-to-programming#op-modes">Hello Robot - Introduction to Programming</a><i class="mathost">REV Robotics (official)</i>
             <ul>
               <li>Android Studio users: Read through the OnBotJava portions of the tutorial. Studio has different ways to create a new OpMode, but the programming is exactly the same.</li>
               <li>They spend some time on building a hardware test bed. You may not have a test bed or it may not be your job to build it, though at some point you will <em>need</em> to find a way to test your code without risking damage to the competition robot. A robot from a previous season or even just a small collection of loose parts (sensors, actuators, and wires) will work well. Make sure your team keeps at least one additional way to test code besides the competition robot itself, and you'll want to wire it up yourself. To that end, here are the <a target="_blank" href="https://docs.revrobotics.com/duo-control/control-system-overview/port-pinouts">REV Control Hub port pinouts</a>.</li>
+              <li><a target="_blank" href="http://mi-ftc.github.io/tutorial/m/motorreversal/index.html">An alternative guide to why one side of a drivetrain needs to be reversed</a> (<a href="http://mi-ftc.github.io/tutorial/m/motorreversal/index.html">same tab</a>)<i class="mathost">MI-FTC</i></li>
               <li><i class="small">You might like to know that the Springboard, despite being developed fully independently of this particular tutorial, happens to fully align with their pacing and decisions on which concepts to introduce now and which to save for your second season. We both came to the same conclusion, so it is likely a good one.</i></li>
             </ul>
           </li>
           <li><b>Reference:</b> <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc">FtcRobotController API Reference (Javadoc)</a><i class="mathost">FIRST (official) via javadoc.io</i>
             <ul>
-              <li>This should provide descriptions of every object and method provided by the SDK. Sometimes it doesn't, but it is still an invaluable resource for determining if something can be done and how to do it, as well as discovering features of the SDK that you didn't know before. Sometimes it's worth just browsing around to stumble upon useful features.</li>
+              <li>This should provide a description of every object and method provided by the SDK. Sometimes it doesn't, but it is still an invaluable resource for determining if something can be done and how to do it, as well as discovering features of the SDK that you didn't know before. Sometimes it's worth just browsing around to stumble upon useful features.</li>
               <li>Most of what you will need to know is in the <span class="specific">RobotCore</span> (com.qualcomm.robotcore) package. The hardware devices (motors, servos, sensors, etc.) provided are in <span class="specific">com.qualcomm.robotcore.hardware</span>.</li>
             </ul>
           </li>

@@ -37,3 +37,13 @@ Summary: Add and revise content
 ### 7-27-23:  
 - Actually deleted the blog (the deletions were not staged before)  
 - Misc. additions to the Basics of Android Studio tutorial and the Springboard  
+
+### 7-28-23:  
+- Minor wording changes to the Springboard  
+
+### 7-29-23:  
+- Added springboard/simulators.html in frustration...  
+- Reworded the Springboard text about having a separate testing setup  
+
+### 7-30-23:  
+- Added sample OpModes next to the tutorial pages for the classes they extend  
