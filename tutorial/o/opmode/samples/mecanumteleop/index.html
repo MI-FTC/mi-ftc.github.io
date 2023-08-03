@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Mecanum TeleOp (Iterative) - MI-FTC</title>
+    <link href="https://mi-ftc.github.io/global.css" rel="stylesheet" 
+		type="text/css" media="all">
+  </head>
+  <body>
+    <hr><hr><hr>
+	<div id="headerbox">
+    <h3>Example Mecanum TeleOp (Iterative)</h3>
+    <p>Provides an example of how a "mecanum" driving arrangement could be controlled</p>
+    <p>This program has been verified to work using <a target="_blank" href="https://github.com/Beta8397/virtual_robot">virtual_robot</a>.</p>
+    <span class="modtime">Last updated 7-31-23</span>
+	</div>
+	<div id="navbox">
+		<table id="navtable"><thead id="navthead">
+			<tr class="navtr"><th id="navth" colspan="4">Navigation</th></tr>
+		</thead><tbody id="navtbody">
+		<tr class="navtr"><td class="navtd"><a class="nava" href="https://mi-ftc.github.io/index.html">Go Home</a></td><td class="navtd"><a class="nava" href="https://mi-ftc.github.io/springboard/index.html">Springboard</a></td><td class="navtd"><a class="nava" href="../../index.html">OpMode</a></td><td class="navtd"><a class="nava" href="https://mi-ftc.github.io/tutorial/l/linearopmode/samples/mecanumteleop/index.html">Linear version</a></td></tr>
+		</tbody>
+	</table>
+	</div>
+	<div id="contentbox">
+		<p>This example TeleOp demonstrates a simple way to smoothly control a Mecanum drivetrain.</p>
+    <p>This uses the techniques from <a target="_blank" href="https://gm0.org/en/latest/docs/software/tutorials/mecanum-drive.html">Game Manual 0</a>.</p>
+    <p>By default, the hardware device names are for the MecanumBot in <a target="_blank" href="https://github.com/Beta8397/virtual_robot">virtual_robot</a>. <a target="_blank" href="http://mi-ftc.github.io/springboard/simulators.html">More on FTC simulators</a> (<a href="http://mi-ftc.github.io/springboard/simulators.html">same tab</a>)</p>
+		<hr>
+		<h4>Preview:</h4>
+<code>
+<span class="comment">//MI-FTC 2023 - https://mi-ftc.github.io</span>
+<span class="comment">//If this is hard to read, try zooming in or opening this in Studio with a larger font size.</span>
+<span class="keyword">package</span> org.firstinspires.ftc.teamcode;
+
+<span class="keyword">import</span> com.qualcomm.robotcore.eventloop.opmode.OpMode;
+<span class="keyword">import</span> com.qualcomm.robotcore.eventloop.opmode.<span class="annotation">TeleOp</span>;
+<span class="keyword">import</span> com.qualcomm.robotcore.hardware.DcMotor;
+
+<span class="annotation">@TeleOp</span>(name=<span class="string">"Example Mecanum TeleOp"</span>, group=<span class="string">"Tutorial"</span>)
+<span class="keyword">public class</span> ExampleMecanumTeleOp <span class="keyword">extends</span> OpMode {
+
+    DcMotor <span class="field">leftFront;</span>
+    DcMotor <span class="field">rightFront;</span>
+    DcMotor <span class="field">leftBack;</span>
+    DcMotor <span class="field">rightBack;</span>
+
+    <span class="keyword">double</span> <span class="field">drive;</span>
+    <span class="keyword">double</span> <span class="field">turn;</span>
+    <span class="keyword">double</span> <span class="field">strafe;</span>
+    <span class="keyword">double</span> <span class="field">GCD;</span>
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> init() {
+
+        <span class="comment">//Make sure these names match the Robot Controller configuration
+        //You can change either this or the RC config to match if necessary</span>
+        <span class="field">leftFront</span> = <span class="field">hardwareMap</span>.get(DcMotor.class, <span class="string">"front_left_motor"</span>);
+        <span class="field">rightFront</span> = <span class="field">hardwareMap</span>.get(DcMotor.class, <span class="string">"front_right_motor"</span>);
+        <span class="field">leftBack</span> = <span class="field">hardwareMap</span>.get(DcMotor.class, <span class="string">"back_left_motor"</span>);
+        <span class="field">rightBack</span> = <span class="field">hardwareMap</span>.get(DcMotor.class, <span class="string">"back_right_motor"</span>);
+
+        <span class="comment">//Your robot may need these inverted</span>
+        <span class="field">leftFront</span>.setDirection(DcMotor.Direction.<span class="field">REVERSE</span>);
+        <span class="field">rightFront</span>.setDirection(DcMotor.Direction.<span class="field">FORWARD</span>); <span class="comment">//State FORWARD too for clarity</span>
+        <span class="field">leftBack</span>.setDirection(DcMotor.Direction.<span class="field">REVERSE</span>);
+        <span class="field">rightBack</span>.setDirection(DcMotor.Direction.<span class="field">FORWARD</span>);
+
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> loop() {
+
+        <span class="comment">//Put any code here which should loop until Stop is pressed
+
+        // https://gm0.org/en/latest/docs/software/tutorials/mecanum-drive.html</span>
+
+            <span class="field">drive</span> = <span class="field">gamepad1.right_trigger</span> - <span class="field">gamepad1.left_trigger;</span>
+            <span class="field">turn</span> = <span class="field">gamepad1.left_stick_x</span> * <span class="number">0.5</span>; <span class="comment">//Adjust multiplier to change sensitivity</span>
+            <span class="comment">//The driver I worked with preferred slower turning</span>
+            <span class="field">strafe</span> = <span class="field">gamepad1.right_stick_x</span> * <span class="number">1.1</span>;
+            <span class="field">GCD</span> = Math.max(Math.abs(<span class="field">drive</span>) + Math.abs(<span class="field">turn</span>) + Math.abs(<span class="field">strafe</span>), <span class="number">1</span>);
+
+            <span class="field">leftFront</span>.setPower(<span class="field">drive</span> + <span class="field">turn</span> + <span class="field">strafe</span>);
+            <span class="comment">//Think this way: Must add power for positive (right) turn, so add turn. Same for strafe.</span>
+            <span class="field">rightFront</span>.setPower(<span class="field">drive</span> - <span class="field">turn</span> - <span class="field">strafe</span>);
+            <span class="comment">//Must remove power for positive (right) turn, so subtract turn.</span>
+            <span class="field">leftBack</span>.setPower(<span class="field">drive</span> + <span class="field">turn</span> - <span class="field">strafe</span>);
+            <span class="field">rightBack</span>.setPower(<span class="field">drive</span> - <span class="field">turn</span> + <span class="field">strafe</span>);
+
+            <span class="comment">//Telemetry, to isolate problems with code or controller</span>
+            <span class="field">telemetry</span>.addData(<span class="string">"rightTrigger"</span>, <span class="field">gamepad1.right_trigger</span>);
+            <span class="field">telemetry</span>.addData(<span class="string">"leftTrigger"</span>, <span class="field">gamepad1.left_trigger</span>);
+            <span class="field">telemetry</span>.addData(<span class="string">"leftStickX"</span>, <span class="field">gamepad1.left_stick_x</span>);
+            <span class="field">telemetry</span>.addData(<span class="string">"rightStickX"</span>, <span class="field">gamepad1.right_stick_x</span>);
+
+            <span class="field">telemetry</span>.addData(<span class="string">"drive"</span>, <span class="field">drive</span>);
+            <span class="field">telemetry</span>.addData(<span class="string">"turn"</span>, <span class="field">turn</span>);
+            <span class="field">telemetry</span>.addData(<span class="string">"strafe"</span>, <span class="field">strafe</span>);
+
+            <span class="field">telemetry</span>.update();
+    }
+}
+
+</code>
+    <hr>
+    <h4>Breakdown:</h4>
+    <p>This will not repeat anything from the <a href="../../index.html">OpMode breakdown</a>.</p>
+<code>
+    DcMotor <span class="field">leftFront;</span>
+    DcMotor <span class="field">rightFront;</span>
+    DcMotor <span class="field">leftBack;</span>
+    DcMotor <span class="field">rightBack;</span>
+
+    <span class="keyword">double</span> <span class="field">drive;</span>
+    <span class="keyword">double</span> <span class="field">turn;</span>
+    <span class="keyword">double</span> <span class="field">strafe;</span>
+    <span class="keyword">double</span> <span class="field">GCD;</span>
+</code>
+    <p>Here we are <strong>declaring</strong> all the variables we will use.</p>
+    <br><br>
+<code>
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> init() {
+    
+        <span class="field">leftFront</span> = <span class="field">hardwareMap</span>.get(DcMotor.class, <span class="string">"front_left_motor"</span>);
+        <span class="field">rightFront</span> = <span class="field">hardwareMap</span>.get(DcMotor.class, <span class="string">"front_right_motor"</span>);
+        <span class="field">leftBack</span> = <span class="field">hardwareMap</span>.get(DcMotor.class, <span class="string">"back_left_motor"</span>);
+        <span class="field">rightBack</span> = <span class="field">hardwareMap</span>.get(DcMotor.class, <span class="string">"back_right_motor"</span>);
+
+        <span class="comment">//Your robot may need these inverted</span>
+        <span class="field">leftFront</span>.setDirection(DcMotor.Direction.<span class="field">REVERSE</span>);
+        <span class="field">rightFront</span>.setDirection(DcMotor.Direction.<span class="field">FORWARD</span>);
+        <span class="field">leftBack</span>.setDirection(DcMotor.Direction.<span class="field">REVERSE</span>);
+        <span class="field">rightBack</span>.setDirection(DcMotor.Direction.<span class="field">FORWARD</span>);
+}
+</code>
+    <p>Now we initialize the motor variables to the actual <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/hardware/HardwareDevice.html">HardwareDevice</a>s, which we can get from the <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/hardware/HardwareMap.html">HardwareMap</a>. Again, their names right now are for <a target="_blank" href="https://github.com/Beta8397/virtual_robot">virtual_robot</a>'s MecanumBot, but you can change these to match your configuration. We also set their directions, reversing the left-side motors in our case.</p>
+    <br><br>
+<code>
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> loop() {
+
+        <span class="comment">// https://gm0.org/en/latest/docs/software/tutorials/mecanum-drive.html</span>
+
+        <span class="field">drive</span> = <span class="field">gamepad1.right_trigger</span> - <span class="field">gamepad1.left_trigger;</span>
+        <span class="field">turn</span> = <span class="field">gamepad1.left_stick_x</span> * <span class="number">0.5</span>; <span class="comment">//Adjust multiplier to change sensitivity</span>
+        <span class="comment">//The driver I worked with preferred slower turning</span>
+        <span class="field">strafe</span> = <span class="field">gamepad1.right_stick_x</span> * <span class="number">1.1</span>;
+        <span class="field">GCD</span> = Math.max(Math.abs(<span class="field">drive</span>) + Math.abs(<span class="field">turn</span>) + Math.abs(<span class="field">strafe</span>), <span class="number">1</span>);
+
+        <span class="field">leftFront</span>.setPower(<span class="field">drive</span> + <span class="field">turn</span> + <span class="field">strafe</span>);
+        <span class="comment">//Think this way: Must add power for positive (right) turn, so add turn. Same for strafe.</span>
+        <span class="field">rightFront</span>.setPower(<span class="field">drive</span> - <span class="field">turn</span> - <span class="field">strafe</span>);
+        <span class="comment">//Must remove power for positive (right) turn, so subtract turn.</span>
+        <span class="field">leftBack</span>.setPower(<span class="field">drive</span> + <span class="field">turn</span> - <span class="field">strafe</span>);
+        <span class="field">rightBack</span>.setPower(<span class="field">drive</span> - <span class="field">turn</span> + <span class="field">strafe</span>);
+</code>
+    <p>We are now using the other four variables we declared at the start. <span class="field">drive</span> combines the forward and reverse inputs, so that full right trigger is +1 and full left trigger is -1. Fully pressing both triggers will give 0. This is what I prefer; you can change this to your own liking. <span class="field">turn</span> and <span class="field">strafe</span> are multiplied by a decimal to modify their relative proportions. <span class="field">turn</span> has half the influence of <span class="field">drive</span>, and <span class="field">strafe</span> has slightly more influence than <span class="field">drive</span> to account for the robot moving slightly slower along that axis when given the same amount of power. Finally, we divide all the inputs by the greatest common denominator (or 1, whichever is larger) so we get the relative proportions of the inputs rather than the actual values. If we didn't do this, when you went to turn while giving full forward power, the motors would not have any power to spare to actually carry out the turn. By scaling them like this, <span class="field">drive</span> will actually decrease to allow the desired portion of the total motor power available to be dedicated to turning. More information is available on <a target="_blank" href="https://gm0.org/en/latest/docs/software/tutorials/mecanum-drive.html">Game Manual 0</a>. Of course, you can change any of this to your liking.</p>
+    <br><br>
+<code>
+            <span class="comment">//Telemetry, to isolate problems with code or controller</span>
+            <span class="field">telemetry</span>.addData(<span class="string">"rightTrigger"</span>, <span class="field">gamepad1.right_trigger</span>);
+            <span class="field">telemetry</span>.addData(<span class="string">"leftTrigger"</span>, <span class="field">gamepad1.left_trigger</span>);
+            <span class="field">telemetry</span>.addData(<span class="string">"leftStickX"</span>, <span class="field">gamepad1.left_stick_x</span>);
+            <span class="field">telemetry</span>.addData(<span class="string">"rightStickX"</span>, <span class="field">gamepad1.right_stick_x</span>);
+
+            <span class="field">telemetry</span>.addData(<span class="string">"drive"</span>, <span class="field">drive</span>);
+            <span class="field">telemetry</span>.addData(<span class="string">"turn"</span>, <span class="field">turn</span>);
+            <span class="field">telemetry</span>.addData(<span class="string">"strafe"</span>, <span class="field">strafe</span>);
+
+            <span class="field">telemetry</span>.update();
+</code>
+    <p>Finally, we send some telemetry back to the Driver Station. Even though we call telemetry.update() on every iteration of the loop, it only actually gets sent back every 250ms. This can be changed with <a target="_blank" href="https://javadoc.io/static/org.firstinspires.ftc/RobotCore/8.2.0/org/firstinspires/ftc/robotcore/external/Telemetry.html">telemetry</a>.setMsTransmissionInterval(). Anyway, we send back <span class="field">drive</span>, <span class="field">turn</span>, and <span class="field">strafe</span>, as well as the controller values used to calculate them. Sending both allows us to quickly determine if problems are caused by the program or by the controller. (Controller issues happen quite often.)</p>
+    <hr>
+    <h4>Controls:</h4>
+    <img src="ExampleMecanumTeleOp.svg" alt="Right trigger drives forward, left trigger drives backward, left stick X-axis turns, and right stick X-axis strafes.">
+    <hr>
+    <h4>Download:</h4>
+    <b><a target="_blank" href="ExampleMecanumTeleOp.java">Download the .java class</a></b>
+    <p>(<a href="" download="ExampleMecanumTeleOp.java">another link to try for newer browsers</a>)</p>
+	</div>
+    <hr><hr><hr>
+  </body>
+</html>

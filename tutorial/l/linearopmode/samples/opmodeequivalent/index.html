@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpMode Equivalent - MI-FTC</title>
+    <link href="https://mi-ftc.github.io/global.css" rel="stylesheet" 
+		type="text/css" media="all">
+  </head>
+  <body>
+    <hr><hr><hr>
+	<div id="headerbox">
+    <h3>OpMode Equivalent</h3>
+    <p>Explains how the various stages of a LinearOpMode are equivalent to the various functions provided by OpMode</p>
+    <p>This program has been verified to work using <a target="_blank" href="https://github.com/Beta8397/virtual_robot">virtual_robot</a>.</p>
+    <span class="modtime">Last updated 7-31-23</span>
+	</div>
+	<div id="navbox">
+		<table id="navtable"><thead id="navthead">
+			<tr class="navtr"><th id="navth" colspan="5">Navigation</th></tr>
+		</thead><tbody id="navtbody">
+		<tr class="navtr"><td class="navtd"><a class="nava" href="https://mi-ftc.github.io/index.html">Go Home</a></td><td class="navtd"><a class="nava" href="https://mi-ftc.github.io/springboard/index.html">Springboard</a></td><td class="navtd"><a class="nava" href="../../index.html">LinearOpMode</a></td><td class="navtd"><a class="nava" href="https://mi-ftc.github.io/tutorial/o/opmode/index.html">OpMode</a></td><td class="navtd"><a class="nava" href="https://mi-ftc.github.io/tutorial/o/opmode/samples/linearopmodeequivalent/index.html">Iterative version</td></tr>
+		</tbody>
+	</table>
+	</div>
+	<div id="contentbox">
+		<p>This example TeleOp demonstrates how the various stages of running a LinearOpMode are equivalent to the functions provided by OpMode. This might help you transition between the two.</p>
+    <p>This program simply writes telemetry log messages to state where it is in the program. Doing only one operation keeps the program small. Also, no, you do not have to call telemetry.update() to send log messages.</p>
+		<hr>
+		<h4>Preview:</h4>
+<code>
+<span class="keyword">package</span> org.firstinspires.ftc.teamcode;
+
+<span class="keyword">import</span> com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+<span class="keyword">import</span> com.qualcomm.robotcore.eventloop.opmode.<span class="annotation">TeleOp</span>;
+
+<span class="keyword">import</span> org.firstinspires.ftc.robotcore.external.Telemetry;
+
+<span class="annotation">@TeleOp</span>(name=<span class="string">"OpModeEquivalent"</span>, group=<span class="string">"Tutorial"</span>)
+<span class="keyword">public class</span> OpModeEquivalent <span class="keyword">extends</span> LinearOpMode {
+
+    Telemetry.Log <span class="field">log</span> = <span class="field">telemetry</span>.log();
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> runOpMode() {
+        <span class="comment">//This section equivalent to init()</span>
+        <span class="field">log</span>.setCapacity(<span class="number">5</span>);
+        <span class="field">log</span>.add(<span class="string">"init()"</span>);
+
+        <span class="keyword">while</span> (!opModeIsActive()) {
+            //This section equivalent to init_loop() (not commonly used in LinearOpModes)
+            <span class="field">log</span>.add(<span class="string">"Looped in init_loop()"</span>);
+        }
+
+        <span class="comment">//This section equivalent to start()</span>
+        <span class="field">log</span>.add(<span class="string">"start()"</span>);
+
+        <span class="keyword">while</span> (opModeIsActive()) {
+            <span class="comment">//This section equivalent to loop()</span>
+            <span class="field">log</span>.add(<span class="string">"Looped in loop()"</span>);
+        }
+
+        <span class="comment">//This section equivalent to stop()</span>
+        <span class="field">log</span>.add(<span class="string">"Stopped"</span>);
+
+    }
+
+}
+
+</code>
+    <hr>
+    <h4>Breakdown:</h4>
+    <p>The comments mostly explain things, so you may not need to read this. It does provide some additional information if you need it.</p>
+<code>
+<span class="keyword">public class</span> OpModeEquivalent <span class="keyword">extends</span> LinearOpMode {
+
+    Telemetry.Log <span class="field">log</span> = <span class="field">telemetry</span>.log();
+</code>
+    <p>This is the very start of the class. This would be even before init() is called in OpMode. The <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/org/firstinspires/ftc/robotcore/external/Telemetry.html">Telemetry</a> object provided by <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/eventloop/opmode/LinearOpMode.html">LinearOpMode</a> contains a <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/org/firstinspires/ftc/robotcore/external/Telemetry.Log.html">Telemetry.Log</a> object, and we can call add() on that object to add a message to the log. This is why we are storing the log object for later use.</p>
+    <br><br>
+<code>
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> runOpMode() {
+        <span class="comment">//This section equivalent to init()</span>
+        <span class="field">log</span>.setCapacity(<span class="number">5</span>);
+        <span class="field">log</span>.add(<span class="string">"init()"</span>);
+</code>
+    <p>The only initialization step for our program is to set the capacity of the log. This is also where you would get your <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/hardware/HardwareDevice.html">HardwareDevice</a>s from the <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/hardware/HardwareMap.html">HardwareMap</a>, set the directions of motors, or other such things. If you extended <a target="_blank" href="https://mi-ftc.github.io/tutorial/o/opmode/index.html">OpMode</a>, then this would go inside the init() function.</p>
+    <br><br>
+<code>
+        <span class="keyword">while</span> (!opModeIsActive()) {
+            //This section equivalent to init_loop() (not commonly used in LinearOpModes)
+            <span class="field">log</span>.add(<span class="string">"Looped in init_loop()"</span>);
+        }
+</code>
+    <p>This is how you could replicate <a target="_blank" href="https://mi-ftc.github.io/tutorial/o/opmode/index.html">OpMode</a>'s init_loop() in LinearOpMode. We simply use a <span class="keyword">while</span> loop which runs as long as the OpMode is not yet active (it only becomes active once <span class="specific">Start</span> is pressed). This also replicates the function of the waitForStart() method, as this is already waiting for the start of the OpMode, so we do not need to call waitForStart() in this case.</p>
+    <br><br>
+<code>
+        <span class="comment">//This section equivalent to start()</span>
+        <span class="field">log</span>.add(<span class="string">"start()"</span>);
+</code>
+    <p>This is the space between our init_loop() replacement and the <code class="inline"><span class="keyword">while</span> (opModeIsActive())</code> loop. This code will run once when <span class="specific">Start</span> is pressed, making it equivalent to <a target="_blank" href="https://mi-ftc.github.io/tutorial/o/opmode/index.html">OpMode</a>'s start() method.</p>
+    <br><br>
+<code>
+        <span class="keyword">while</span> (opModeIsActive()) {
+            <span class="comment">//This section equivalent to loop()</span>
+            <span class="field">log</span>.add(<span class="string">"Looped in loop()"</span>);
+        }
+</code>
+    <p>This loop is a common sight in LinearOpModes. This is how the program repeats continually until it needs to stop. This is equivalent to <a target="_blank" href="https://mi-ftc.github.io/tutorial/o/opmode/index.html">OpMode</a>'s loop() method.</p>
+    <br><br>
+<code>
+        <span class="comment">//This section equivalent to stop()</span>
+        <span class="field">log</span>.add(<span class="string">"Stopped"</span>);
+</code>
+    <p>This is simply the space right after the <code class="inline"><span class="keyword">while</span> (opModeIsActive())</code> loop. When the OpMode is stopped, opModeIsActive() will become <span class="keyword">false</span>, causing the loop to exit. The program will then continue on a bit longer and run the code after the loop. This is equivalent to <a target="_blank" href="https://mi-ftc.github.io/tutorial/o/opmode/index.html">OpMode</a>'s stop() method.</p>
+    <br><br>
+    <hr>
+    <h4>Download:</h4>
+    <b><a target="_blank" href="OpModeEquivalent.java">Download the .java class</a></b>
+    <p>(<a href="" download="OpModeEquivalent.java">another link to try for newer browsers</a>)</p>
+	</div>
+    <hr><hr><hr>
+  </body>
+</html>

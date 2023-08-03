@@ -2,8 +2,8 @@
 //If this is hard to read, break it up with some extra newlines or change your text size.
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp(name="Example Mecanum TeleOp (Linear)", group="Tutorial")
@@ -25,10 +25,10 @@ public class ExampleMecanumTeleOpLinear extends LinearOpMode {
 
         //Make sure these names match the Robot Controller configuration
         //You can change either this or the RC config to match if necessary
-        leftFront = hardwareMap.get(DcMotor.class, "leftFront");
-        rightFront = hardwareMap.get(DcMotor.class, "rightFront");
-        leftBack = hardwareMap.get(DcMotor.class, "leftBack");
-        rightBack = hardwareMap.get(DcMotor.class, "rightBack");
+        leftFront = hardwareMap.get(DcMotor.class, "front_left_motor");
+        rightFront = hardwareMap.get(DcMotor.class, "front_right_motor");
+        leftBack = hardwareMap.get(DcMotor.class, "back_left_motor");
+        rightBack = hardwareMap.get(DcMotor.class, "back_right_motor");
 
         //Your robot may need these inverted
         leftFront.setDirection(DcMotor.Direction.REVERSE);
@@ -54,6 +54,18 @@ public class ExampleMecanumTeleOpLinear extends LinearOpMode {
             //Must remove power for positive (right) turn, so subtract turn.
             leftBack.setPower(drive + turn - strafe);
             rightBack.setPower(drive - turn + strafe);
+
+            //Telemetry, to isolate problems with code or controller
+            telemetry.addData("rightTrigger", gamepad1.right_trigger);
+            telemetry.addData("leftTrigger", gamepad1.left_trigger);
+            telemetry.addData("leftStickX", gamepad1.left_stick_x);
+            telemetry.addData("rightStickX", gamepad1.right_stick_x);
+
+            telemetry.addData("drive", drive);
+            telemetry.addData("turn", turn);
+            telemetry.addData("strafe", strafe);
+
+            telemetry.update();
 
             idle(); //allow the system to do background tasks (otherwise it may crash)
         }

@@ -10,7 +10,7 @@
     <hr id="top"><hr><hr>
     <div id="headerbox">
       <!--<h2 style="color: darkorange;">Under Construction</h2>-->
-      <p>This is roughly representative of what will be published at the start of the 2023-24 season. A couple smaller additions are still planned, but it will definitely follow this outline. Do note that this page may be improved at any time, even during the season as novel issues and concepts arise. Even if this page does not fully suit the way your team works, hopefully it can still be a helpful resource to get your new programmers started on the right foot. <i class="small">(This note describes the current stage of development on this page, and will disappear once the game has been revealed.)</i></p>
+      <p>This is roughly representative of what will be published at the start of the 2023-24 season. Do note that this page may be improved at any time, even during the season as novel issues and concepts arise. Even if this page does not fully suit the way your team works, hopefully it can still be a helpful resource to get your new programmers started on the right foot. <i class="small">(This note describes the current stage of development on this page, and will disappear once the game has been revealed.)</i></p>
       <h3>FTC Programming Springboard</h3>
       <p>Welcome to FTC! No experience in particular is required.</p>
       <p><b>All links (except Navigation below) open in a new tab.</b></p>
@@ -24,7 +24,7 @@
       </tbody></table>
       </div>
       
-      <span class="modtime">Last updated 7-30-23</span>
+      <span class="modtime">Last updated 7-31-23</span>
     </div>
     <hr>
     <div id="legendbox">
@@ -72,7 +72,12 @@
       <ul>
         <li><a target="_blank" href="https://docs.revrobotics.com/duo-control/control-hub-gs">Connecting to a Robot Controller</a><i class="mathost">REV Robotics (official)</i>
           <ul>
-            <li>The REV Hardware Client will only work with REV Control Hubs. If you are using a phone as a robot controller, you will have to use the web interface, and the IP address is <a target="_blank" href="192.168.48.1:8080">192.168.48.1:8080</a>.<i class="mathost">REV Robotics (official)</i></li>
+            <li>The REV Hardware Client will only work with REV Control Hubs. If you are using a phone as a robot controller, you will have to use the web interface.
+              <ul>
+                <li>Control Hub: Connect to the network it's hosting (5GHz only by default), then browse to <a target="_blank" href="http://192.168.43.1:8080">192.168.43.1:8080</a></li>
+                <li>Phone: Connect to the network it's hosting (5GHz only by default), then browse to <a target="_blank" href="http://192.168.49.1:8080">192.168.49.1:8080</a></li>
+              </ul>
+            </li>
             <li>If you are using Blocks or OnBotJava, skip the next section and go to <h5 class="topic"><a href="#Java">Java</a>.</h5></li>
           </ul>
         </li>
@@ -99,9 +104,14 @@
           <ul>
             <li><h5 class="topic">Part 1 - Connect Android Studio (IDEA) to Git</h5> - <i class="tdesc">We need to tell the IDE where our code is.</i>
               <ul>
+                <li>You may want to consider creating a <span class="specific">fork</span> of FtcRobotController and cloning your fork. This will give you your own GitHub repository that you can push to, letting you work from multiple computers and making it easier for multiple developers to work on the same code. Also, when the official repository updates, you can update your fork to match. This will be easier if you don't put anything on the <span class="specific">master</span> branch; at least make another branch to do your development on.</li>
                 <li class="material"><b>Overview:</b> Click "Get from VCS" on the Studio Welcome screen, and sign in to GitHub with the account you want to use (if it works) or generate a personal access token. Then, get the repository URL from the <span class="specific">Code</span> tab on your GitHub page. Studio will clone the repo and open a new project. Studio does not come with Git, so if Git is not already installed on your system, <a target="_blank" href="https://git-scm.com/">get it here</a>.<i class="mathost">git-scm.com (official)</i></li>
                 <li class="material"><b>Reference:</b> <a target="_blank" href="https://www.jetbrains.com/help/idea/set-up-a-git-repository.html">Set up a Git repository in IDEA</a><i class="mathost">Jetbrains (official)</i></li>
-                <li><b>Visualize:</b> Video form (coming soon!)</li>
+                <li><b>Visualize:</b> <a target="_blank" href="https://youtu.be/UjwEU8wauzk">Android Studio: Clone a GitHub Repository</a><i class="mathost">Stackera via YouTube</i>
+                  <ul>
+                    <li>The <span class="specific">Version Control</span> pane at the bottom in the video has since been replaced by the <span class="specific">Commit</span> pane on the left. Otherwise, everything still matches the video for the most part.</li>
+                  </ul>
+                </li>
               </ul>
             </li>
             
@@ -121,7 +131,7 @@
               <ul>
                 <li class="material"><b>Overview:</b> <a target="_blank" href="../tutorial/s/studiogithub/index.html">Git from within Android Studio</a> (<a href="../tutorial/s/studiogithub/index.html">same tab</a>)<i class="mathost">MI-FTC</i></li>
                 <li class="material"><b>Comprehensive:</b> <a target="_blank" href="https://www.jetbrains.com/help/idea/using-git-integration.html">IntelliJ tutorial for Git in IDEA</a><i class="mathost">Jetbrains (official)</i></li>
-                <li class="material"><b>Visualized:</b> <a target="_blank" href="https://youtu.be/rU-YifCAP2s">Video form</a><i class="mathost">MI-FTC via YouTube</i></li>
+                <li class="material"><b>Visualized:</b> The video for Part 1 also covers this.<!--<a target="_blank" href="https://youtu.be/rU-YifCAP2s">Video form</a><i class="mathost">MI-FTC via YouTube</i>--></li>
               </ul>
             </li>
           </ul>

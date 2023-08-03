@@ -64,6 +64,10 @@ code {
   color: indigo;
 }
 
+.number {
+  color: blue;
+}
+
 /* How to display a specific named item or attribute */
 .specific {
     font-weight: bold;

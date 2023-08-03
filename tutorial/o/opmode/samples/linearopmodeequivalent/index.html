@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinearOpMode Equivalent - MI-FTC</title>
+    <link href="https://mi-ftc.github.io/global.css" rel="stylesheet" 
+		type="text/css" media="all">
+  </head>
+  <body>
+    <hr><hr><hr>
+	<div id="headerbox">
+    <h3>LinearOpMode Equivalent</h3>
+    <p>Explains how the various stages of a LinearOpMode are equivalent to the various functions provided by OpMode</p>
+    <p>This program has been verified to work using <a target="_blank" href="https://github.com/Beta8397/virtual_robot">virtual_robot</a>.</p>
+    <span class="modtime">Last updated 7-31-23</span>
+	</div>
+	<div id="navbox">
+		<table id="navtable"><thead id="navthead">
+			<tr class="navtr"><th id="navth" colspan="5">Navigation</th></tr>
+		</thead><tbody id="navtbody">
+		<tr class="navtr"><td class="navtd"><a class="nava" href="https://mi-ftc.github.io/index.html">Go Home</a></td><td class="navtd"><a class="nava" href="https://mi-ftc.github.io/springboard/index.html">Springboard</a></td><td class="navtd"><a class="nava" href="https://mi-ftc.github.io/tutorial/l/linearopmode/index.html">LinearOpMode</a></td><td class="navtd"><a class="nava" href="../../index.html">OpMode</a></td><td class="navtd"><a class="nava" href="https://mi-ftc.github.io/tutorial/l/linearopmode/samples/opmodeequivalent/index.html">Linear version</td></tr>
+		</tbody>
+	</table>
+	</div>
+	<div id="contentbox">
+		<p>This example TeleOp demonstrates how the various stages of running a LinearOpMode are equivalent to the functions provided by OpMode. This might help you transition between the two.</p>
+    <p>This program simply writes telemetry log messages to state where it is in the program. Doing only one operation keeps the program small. Also, no, you do not have to call telemetry.update() to send log messages.</p>
+		<hr>
+		<h4>Preview:</h4>
+<code>
+<span class="keyword">package</span> org.firstinspires.ftc.teamcode;
+
+<span class="keyword">import</span> com.qualcomm.robotcore.eventloop.opmode.OpMode;
+<span class="keyword">import</span> com.qualcomm.robotcore.eventloop.opmode.<span class="annotation">TeleOp</span>;
+
+<span class="keyword">import</span> org.firstinspires.ftc.robotcore.external.Telemetry;
+
+<span class="annotation">@TeleOp</span>(name=<span class="string">"LinearOpModeEquivalent"</span>, group=<span class="string">"Tutorial"</span>)
+<span class="keyword">public class</span> LinearOpModeEquivalent <span class="keyword">extends</span> OpMode {
+
+    Telemetry.Log <span class="field">log</span> = <span class="field">telemetry</span>.log();
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> init() {
+        <span class="comment">//This would be right at the start of runOpMode()</span>
+        <span class="field">log</span>.setCapacity(<span class="number">5</span>);
+        <span class="field">log</span>.add(<span class="string">"runOpMode() called"</span>);
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> init_loop() {
+        <span class="comment">//This method is optional!
+        //If you put nothing here, it just behaves like an implied waitForStart()
+        //If you put something here, it's like replacing waitForStart() with a while (!opModeIsActive()) loop.</span>
+        <span class="field">log</span>.add(<span class="string">"Looped in while (!opModeIsActive())"</span>);
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> start() {
+        <span class="comment">//This method is optional!
+        //This is what happens between waitForStart() and while (opModeIsActive())</span>
+        <span class="field">log</span>.add(<span class="string">"waitForStart() just returned"</span>);
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> loop() {
+        <span class="comment">//This is equivalent to the while (opModeIsActive()) loop</span>
+        <span class="field">log</span>.add(<span class="string">"Looped in while (opModeIsActive())"</span>);
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> stop() {
+        <span class="comment">//This method is optional!
+        //This is what happens when the OpMode is stopped, opModeIsActive() becomes false, and the while loop exits. This is the code right after the loop.</span>
+        <span class="field">log</span>.add(<span class="string">"Exited while (opModeIsActive())"</span>);
+    }
+}
+</code>
+    <hr>
+    <h4>Breakdown:</h4>
+    <p>The comments mostly explain things, so you may not need to read this. It does provide some additional information if you need it.</p>
+<code>
+<span class="keyword">public class</span> LinearOpModeEquivalent <span class="keyword">extends</span> OpMode {
+
+    Telemetry.Log <span class="field">log</span> = <span class="field">telemetry</span>.log();
+</code>
+    <p>This is the very start of the class. This would be even before init() is called in OpMode. The <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/org/firstinspires/ftc/robotcore/external/Telemetry.html">Telemetry</a> object provided by <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/eventloop/opmode/LinearOpMode.html">LinearOpMode</a> contains a <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/org/firstinspires/ftc/robotcore/external/Telemetry.Log.html">Telemetry.Log</a> object, and we can call add() on that object to add a message to the log. This is why we are storing the log object for later use.</p>
+    <br><br>
+<code>
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> init() {
+        <span class="comment">//This would be right at the start of runOpMode()</span>
+        <span class="field">log</span>.setCapacity(<span class="number">5</span>);
+        <span class="field">log</span>.add(<span class="string">"runOpMode() called"</span>);
+    }
+</code>
+    <p>The only initialization step for our program is to set the capacity of the log. This is also where you would get your <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/hardware/HardwareDevice.html">HardwareDevice</a>s from the <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/hardware/HardwareMap.html">HardwareMap</a>, set the directions of motors, or other such things. If you extended <a target="_blank" href="https://mi-ftc.github.io/tutorial/l/linearopmode/index.html">LinearOpMode</a>, then this would go at the start of the runOpMode() method, before waitForStart().</p>
+    <br><br>
+<code>
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> init_loop() {
+        <span class="comment">//This method is optional!
+        //If you put nothing here, it just behaves like an implied waitForStart()
+        //If you put something here, it's like replacing waitForStart() with a while (!opModeIsActive()) loop.</span>
+        <span class="field">log</span>.add(<span class="string">"Looped in while (!opModeIsActive())"</span>);
+    }
+</code>
+    <p>This runs where waitForStart() would normally sit around and do nothing until the <span class="specific">Start</span> button is pressed. If you look at this sample's <a target="_blank" href="https://mi-ftc.github.io/tutorial/l/linearopmode/samples/opmodeequivalent/index.html">LinearOpMode counterpart</a>, you'll see that we replicated it using a <code class="inline"><span class="keyword">while</span> (!opModeIsActive())</code> loop.</p>
+    <br><br>
+<code>
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> start() {
+        <span class="comment">//This method is optional!
+        //This is what happens between waitForStart() and while (opModeIsActive())</span>
+        <span class="field">log</span>.add(<span class="string">"waitForStart() just returned"</span>);
+    }
+</code>
+    <p>This is what would go between waitForStart() and the <code class="inline"><span class="keyword">while</span> (opModeIsActive())</code> loop. This code will run once when <span class="specific">Start</span> is pressed.</p>
+    <br><br>
+<code>
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> loop() {
+        <span class="comment">//This is equivalent to the while (opModeIsActive()) loop</span>
+        <span class="field">log</span>.add(<span class="string">"Looped in while (opModeIsActive())"</span>);
+    }
+</code>
+    <p>This code runs continually until <span class="specific">Stop</span> is pressed. This performs the function of a <code class="inline"><span class="keyword">while</span> (opModeIsActive())</code> loop in a <a target="_blank" href="https://mi-ftc.github.io/tutorial/l/linearopmode/index.html">LinearOpMode</a>.</p>
+    <br><br>
+<code>
+    <span class="annotation">@Override</span>
+    <span class="keyword">public void</span> stop() {
+        <span class="comment">//This method is optional!
+        //This is what happens when the OpMode is stopped, opModeIsActive() becomes false, and the while loop exits. This is the code right after the loop.</span>
+        <span class="field">log</span>.add(<span class="string">"Exited while (opModeIsActive())"</span>);
+    }
+</code>
+    <p>This is simply the space right after the <code class="inline"><span class="keyword">while</span> (opModeIsActive())</code> loop. When a <a target="_blank" href="https://mi-ftc.github.io/tutorial/l/linearopmode/index.html">LinearOpMode</a> is stopped, opModeIsActive() will become <span class="keyword">false</span>, causing the loop to exit. The program will then continue on a bit longer and run the code after the loop.</p>
+    <br><br>
+    <hr>
+    <h4>Download:</h4>
+    <b><a target="_blank" href="LinearOpModeEquivalent.java">Download the .java class</a></b>
+    <p>(<a href="" download="LinearOpModeEquivalent.java">another link to try for newer browsers</a>)</p>
+	</div>
+    <hr><hr><hr>
+  </body>
+</html>

@@ -41,9 +41,16 @@ Summary: Add and revise content
 ### 7-28-23:  
 - Minor wording changes to the Springboard  
 
-### 7-29-23:  
-- Added springboard/simulators.html in frustration...  
-- Reworded the Springboard text about having a separate testing setup  
-
 ### 7-30-23:  
+- Added springboard/simulators.html in frustration...  
+- Added springboard/simulators.html to the tutorials index  
+- Reworded the Springboard text about having a separate testing setup  
+- Removed old navbox template for Blog pages  
+
+### 7-31-23:  
 - Added sample OpModes next to the tutorial pages for the classes they extend  
+  - (Linear)OpModeEquivalent - one explained with the other  
+  - ExampleMecanumTeleOp(Linear) - a basic Mecanum TeleOp  
+- New code colorization class: "number" renders blue (and not bold)  
+- Added a suggestion on the top-level index to view this through the Wayback 
+Machine on older browsers  
