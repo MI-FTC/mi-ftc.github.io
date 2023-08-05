@@ -54,3 +54,6 @@ Summary: Add and revise content
 - New code colorization class: "number" renders blue (and not bold)  
 - Added a suggestion on the top-level index to view this through the Wayback 
 Machine on older browsers  
+
+### 8-5-23:  
+- Added some margins in global.css to make the Springboard easier to read  

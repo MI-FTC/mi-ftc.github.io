@@ -34,6 +34,22 @@ code {
   white-space: pre-wrap;
 }
 
+ul {
+  margin: 4px;
+}
+
+p {
+  /*margin: 4px;*/
+}
+
+i {
+  margin: 4px;
+}
+
+li {
+  margin: 6px;
+}
+
 /* Allow display of inline code */
 .inline {
 	display: inline;
