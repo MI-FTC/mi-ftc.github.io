@@ -24,7 +24,7 @@
       </tbody></table>
       </div>
       
-      <span class="modtime">Last updated 7-31-23</span>
+      <span class="modtime">Last updated 8-10-23</span>
     </div>
     <hr>
     <div id="legendbox">
@@ -53,14 +53,10 @@
               <li>For FTC in particular, a lot more support materials are available for Java, and it is a lot easier to utilize libraries and collaborate as a team, especially when your team uses Android Studio to decentralize the workflow.</li>
             </ul>
           </li>
-          <li>If you have ever done some programming in a text-based language and been at least reasonably confident in what you were doing, then you should consider programming in Java. Blocks can be a good tool to help you learn to program, but at this age, you are likely patient enough to be able to learn the basics of a text-based language and look up what you can use to accomplish a given task. We recommend <span class="specific">Java</span> whenever it is feasible, but if you are having a hard time understanding the foundational concepts, you might want to fall back to Blocks for a little while. You might not even want to use FTC blocks - <a target="_blank" href="http://appinventor.mit.edu">MIT AppInventor</a> and <a target="_blank" href="http://snap.berkeley.edu">Berkeley's <i>Snap!</i></a> are great options for teaching the foundational concepts of programming in ways that can be carried into text-based languages.</li>
+          <li>If you have ever done some programming in a text-based language and felt at least reasonably confident in what you were doing, then you should consider programming in Java. Blocks can be a good tool to help you learn to program, but at this age, you are likely patient enough to be able to learn the basics of a text-based language and look up what you can use to accomplish a given task. We recommend <span class="specific">Java</span> whenever it is feasible, but if you are having a hard time understanding the foundational concepts, you might want to fall back to Blocks for a little while. You might not even want to use FTC blocks - <a target="_blank" href="http://appinventor.mit.edu">MIT AppInventor</a> and <a target="_blank" href="http://snap.berkeley.edu">Berkeley's <i>Snap!</i></a> are great options for teaching the foundational concepts of programming in ways that can be carried into text-based languages.</li>
         </ul>
-        </div>
-        <!-- <li>If you are more used to a Blockly language <i class="mdesc">(code.org, Scratch, AppInventor)</i>, want a more visual representation of your code, or are part of a team that exclusively uses Blocks code, then <b style="color: green">Blocks</b> could be a good option for you. However, Java has important advantages <i class="small">(libraries, full access to the SDK, more available support materials)</i> that you cannot get with Blocks, so remember it as an option if you ever need that functionality in the future. It shouldn't be too hard to switch over. If you wish to proceed with Blocks, you will be working directly with the Control Hub, so skip the Android Studio section of this page.<ul>
-          <li class="small">Perhaps you noticed that we didn't list <a target="_blank" href="https://snap.berkeley.edu"><i>Snap!</i></a> as an example of a Blockly language. It is, in fact, the finest example of a Blockly language overall, and its more featureful nature is such that programmers who are confident in <i>Snap!</i> will likely have a better time in Java than they would dealing with the abstractions and lack of language features present in Blocks.</li>
-        </ul></li>
-        <li>If you have fallen through all of the conditions above <b>[OR]</b> have done some programming in a text-based language and been at least reasonably confident in what you were doing, then you should consider programming in Java. This appears to be the most popular option with the widest library of support, and it allows you full access to the SDK <i class="mdesc">(Despite what REV might say, not everything is available in Blocks)</i> and Java language features. There are two environments available in which to program in Java - <b style="color: green">OnBotJava</b> and <b style="color: green">Android Studio</b> - and the best option is probably just the one your team uses. However, there are two notable advantages to Android Studio:<ul> -->
-        <p>If you decided on Blocks, you will be interacting directly with the Robot Controller. You can safely ignore the <b>Android Studio</b> section of this page. If you chose Java, there are two environments available. There is no difficulty gradient between the two, and for consistency, you should choose the one that the rest of your team already uses.</p>
+      </div>
+        <p>If you decided on Blocks, you will be interacting directly with the Robot Controller. You can safely ignore the <span class="specific">Android Studio</span> section of this page. If you chose Java, there are two environments available. There is no difficulty gradient between the two, and for consistency, you should choose the one that the rest of your team already uses.</p>
         <ul>
           <li><span class="specific">OnBotJava</span> is a Java editor built into the Robot Controller. OpModes must be edited on and saved to that device. If you will be using this option, you can safely ignore the <b>Android Studio</b> section of this page.</li>
           <li><span class="specific">Android Studio</span> is an IDE (<b>I</b>ntegrated <b>D</b>evelopment <b>E</b>nvironment), which provides additional features such as code completion (it can suggest available fields and methods as you are typing) and the ability to edit code without a Robot Controller present and build it onto one <em>or more</em> Robot Controllers later. Studio can also integrate with a Version Control System (VCS), such as Git <i class="small">(covered below)</i>. Many teams who use Studio host their code on a GitHub repository to enable all their programmers to write code from home, and the VCS lets multiple people modify the same file and have their changes safely merged together. Once everyone is back at the shop, the code can be built onto the actual robot. If you are using Studio, the entire page applies to you. You will still need to interact with a Robot Controller on occasion, so read the section below.</li>
@@ -152,12 +148,18 @@
       
       <h5 class="theader">Java</h5> - <i class="tdesc">Learn the basics of the language and Object-Oriented Programming (OOP)</i>
       <ul>
-        <li class="material"><b>Overview:</b> <a target="_blank" href="https://www.w3schools.com/java/default.asp">W3Schools Java Tutorial</a><i class="mathost">W3Schools</i>
+      <li class="material"><b>Overview:</b> Java Tutorial
+        <ul>
+          <li class="material"><a target="_blank" href="https://www.w3schools.com/java/default.asp">W3Schools Java Tutorial</a> - <span class="mdesc">a normal Java tutorial. You only need to go through the "Tutorial" and "Methods" sections. You can try some of the exercises by either installing the Java runtime or using something like <a target="_blank" href="https://replit.com">Replit</a>, or you can just wait until we write code for a robot.</span><span class="mathost">W3Schools</span></li>
+          <li class="material"><a target="_blank" href="https://raw.githubusercontent.com/alan412/LearnJavaForFTC/master/LearnJavaForFTC.pdf">Learn Java For FTC</a> - a 220-or-so page PDF with a specific focus on FTC programming and more of a curricular style. If you read this, you might not need the <span class="specific">Hello Robot</span> tutorial later.<span class="mathost">Alan Smith</span></li>
+        </ul>
+      </li>
+        <!--<li class="material"><b>Overview:</b> <a target="_blank" href="https://www.w3schools.com/java/default.asp">W3Schools Java Tutorial</a><i class="mathost">W3Schools</i>
           <ul>
             <li>Go through the "Tutorial" and "Methods" sections, then stop. The Oracle tutorial below ("For your second season") covers the remaining concepts more effectively.</li>
             <li>If you want to try some of the exercises yourself but don't want to install the Java runtime, <a target="_blank" href="https://replit.com/">Replit</a> lets you write and run code online for free. <i class="mdesc">(At the time of writing, it's all branded up for GPT integration. You can safely ignore all that.)</i> Alternatively, you could just wait until we start writing code for a robot.</li>
           </ul>
-        </li>
+        </li>-->
         <li class="material"><b>Reference:</b> <a target="_blank" href="https://docs.oracle.com/javase/8/docs/api/">Java API Documentation (Javadoc)</a><i class="mathost">Oracle</i></li>
         <li class="material">For your second season: <a target="_blank" href="https://docs.oracle.com/javase/tutorial/">Oracle's Java tutorial</a> - You're ready to start utilizing Object-Oriented Programming concepts and creating your own libraries and interfaces. This tutorial will introduce you to OOP and some of the more unique Java language features. Start with the "Learning the Java Language" trail.<i class="mathost">Oracle</i></li>
       </ul>
@@ -176,15 +178,15 @@
           <li><b>Overview:</b> <a target="_blank" href="https://docs.revrobotics.com/duo-control/programming/hello-robot-introduction-to-programming#op-modes">Hello Robot - Introduction to Programming</a><i class="mathost">REV Robotics (official)</i>
             <ul>
               <li>Android Studio users: Read through the OnBotJava portions of the tutorial. Studio has different ways to create a new OpMode, but the programming is exactly the same.</li>
-              <li>They spend some time on building a hardware test bed. You may not have a test bed or it may not be your job to build it, though at some point you will <em>need</em> to find a way to test your code without risking damage to the competition robot. A robot from a previous season or even just a small collection of loose parts (sensors, actuators, and wires) will work well. Make sure your team keeps at least one additional way to test code besides the competition robot itself, and you'll want to wire it up yourself. To that end, here are the <a target="_blank" href="https://docs.revrobotics.com/duo-control/control-system-overview/port-pinouts">REV Control Hub port pinouts</a>.</li>
+              <!--<li>They spend some time on building a hardware test bed. You may not have a test bed or it may not be your job to build it, though at some point you will <em>need</em> to find a way to test your code without risking damage to the competition robot. A robot from a previous season or even just a small collection of loose parts (sensors, actuators, and wires) will work well. Make sure your team keeps at least one additional way to test code besides the competition robot itself, and you'll want to wire it up yourself. To that end, here are the <a target="_blank" href="https://docs.revrobotics.com/duo-control/control-system-overview/port-pinouts">REV Control Hub port pinouts</a>.</li>-->
               <li><a target="_blank" href="http://mi-ftc.github.io/tutorial/m/motorreversal/index.html">An alternative guide to why one side of a drivetrain needs to be reversed</a> (<a href="http://mi-ftc.github.io/tutorial/m/motorreversal/index.html">same tab</a>)<i class="mathost">MI-FTC</i></li>
-              <li><i class="small">You might like to know that the Springboard, despite being developed fully independently of this particular tutorial, happens to fully align with their pacing and decisions on which concepts to introduce now and which to save for your second season. We both came to the same conclusion, so it is likely a good one.</i></li>
+              <li><i class="small">You might enjoy knowing that the Springboard, despite being developed fully independently of this particular tutorial, happens to fully align with their pacing and decisions on which concepts to introduce now and which to save for your second season. We both came to the same conclusion, so it is likely a good one.</i></li>
             </ul>
           </li>
           <li><b>Reference:</b> <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc">FtcRobotController API Reference (Javadoc)</a><i class="mathost">FIRST (official) via javadoc.io</i>
             <ul>
               <li>This should provide a description of every object and method provided by the SDK. Sometimes it doesn't, but it is still an invaluable resource for determining if something can be done and how to do it, as well as discovering features of the SDK that you didn't know before. Sometimes it's worth just browsing around to stumble upon useful features.</li>
-              <li>Most of what you will need to know is in the <span class="specific">RobotCore</span> (com.qualcomm.robotcore) package. The hardware devices (motors, servos, sensors, etc.) provided are in <span class="specific">com.qualcomm.robotcore.hardware</span>.</li>
+              <li>Most of what you will need to know is in the <span class="specific">RobotCore</span> (com.qualcomm.robotcore) package. The hardware devices (motors, servos, sensors, etc.) provided are in <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/hardware/package-summary.html">com.qualcomm.robotcore.hardware</a>. Other useful places to look include <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/util/package-summary.html">com.qualcomm.robotcore.util</a> and <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/org/firstinspires/ftc/robotcore/external/Telemetry.html">Telemetry (org.firstinspires.ftc.robotcore.external.Telemetry)</a>.</li>
             </ul>
           </li>
           
@@ -237,7 +239,11 @@
         </li>
         <li><a target="_blank" href="https://ftc-docs.firstinspires.org/en/latest/index.html">Official FIRST FTC documentation</a> <i class="mdesc">(although there's not much there that you haven't already learned here)</i><i class="mathost">FIRST (official)</i></li>
         <li><a target="_blank" href="https://github.com/FIRST-Tech-Challenge/FtcRobotController">FtcRobotController (the SDK) on GitHub</a> - <i class="mdesc">Make sure to check out the repository Wiki. Follow links in the README to official resources, open an issue to report a bug or suggest a new feature, or fork the repository to make your team's own GitHub repo. The advantage of forking is that updates made to the SDK can also be applied to your fork while leaving your code intact.</i><i class="mathost">FIRST (official) via GitHub</i></li>
-        <li>The wonderful <a target="_blank" href="https://gm0.org">Game Manual 0</a></li>
+        <li><a target="_blank" href="https://gm0.org">Game Manual 0</a>
+          <ul>
+            <li class="mdesc">GM0 is a similar concept to the Springboard with some similar resources.</li>
+          </ul>
+        </li>
         <li><a target="_blank" href="https://ftctutorials.com">ftctutorials.com</a></li>
         <li><a target="_blank" href="https://ftc-tricks.com">FTC Tricks</a></li>
       </ul>

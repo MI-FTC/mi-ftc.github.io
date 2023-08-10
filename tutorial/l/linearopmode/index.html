@@ -19,6 +19,7 @@
 			<tr class="navtr"><td class="navtd"><a class="nava" href="../../../index.html">Go Home</a></td><td class="navtd"><a class="nava" href="../../o/opmode/index.html">This page's OpMode counterpart</a></td><td class="navtd"><a class="nava" href="../../../springboard/index.html">Springboard</a></td><td class="navtd"><a class="nava" href="../../index.html">MI-FTC Tutorials Index</a></td></tr>
 		</tbody></table>
 	</div>
+  <span class="modtime">Last updated 8-10-23</span>
 	<hr>
 	<div id="contentbox">
 		<p><a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/eventloop/opmode/LinearOpMode.html">LinearOpMode</a> is a subclass of <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/eventloop/opmode/OpMode.html">OpMode</a>, meaning that LinearOpMode is actually implemented in terms of OpMode. This is explored more in the <a target="_blank" href="samples/opmodeequivalent/index.html">OpModeEquivalent sample program</a>, but mentioning this fact right now is mostly just an excuse to link to both classes in the JavaDoc. They can both do all the same things, but many people find that their different structures cater to different use cases. Keep that in mind - don't get caught up in one! Look at both and determine which is the easiest for you to understand or, if you feel a little more brave, which is the best to use for each program.</p>
@@ -61,13 +62,13 @@
 		<code><b class="keyword">package</b> org.firstinspires.ftc.teamcode;</code>
 		<p>This line tells the compiler that this class is part of the TeamCode package. This is important becuase only TeamCode gets built onto the device, so we need to be in that package to have our program appear on the robot controller.</p>
 		<br><br>
-		<code><b class="keyword">import</b> com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-<b class="keyword">import</b> com.qualcomm.robotcore.eventloop.opmode.<span class="annotation">TeleOp</span>;</code>
+		<code><b class="keyword">import</b> com.qualcomm.robotcore.eventloop.opmode.<span class="annotation">TeleOp</span>;
+<b class="keyword">import</b> com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;</code>
 		<p>These lines import the class we are going to extend, LinearOpMode, and the annotation we are going to apply above it, <span class="annotation">@TeleOp</span>, from the parent package "opmode".</p>
 		<p>We do not have to generate these import statements ourselves. When we create the next two lines, Studio will ask us if we want it to generate the import lines for us. Press Alt+Enter to accept its help.</p>
 		<br><br>
 		<code><b class="annotation">@TeleOp</b>(name="", group="")</code>
-		<p>This is where the first import statement above becomes important. Notice that this line does not end with a semicolon. This is not a normal line of code. Rather, it is a directive to the compiler, telling it to handle this class in a special way (in this case, to add it to the registry of user-accessible TeleOps). The name field is required, and the group field is optional.</p>
+		<p>This is where the first import statement above becomes important. Notice that this line does not end with a semicolon. This is not a normal line of code. Rather, it is a directive to the compiler, telling it to handle this class in a special way (in this case, to add it to the registry of user-accessible TeleOps). Both fields are optional. If the name is omitted, the name of the class is used.</p>
 		<p><span class="annotation">@TeleOp</span> creates a TeleOp, while <span class="annotation">@Autonomous</span> creates an autonomous OpMode. You can also add <span class="annotation">@Disabled</span> below this to prevent the OpMode from being accessible on the Driver Station.</p>
 		<br><br>
 		<code><b class="keyword">public class</b> <span class="comment">BoilerPlate_LinearOpMode</span> <b class="keyword">extends</b> LinearOpMode {</code>

@@ -57,3 +57,6 @@ Machine on older browsers
 
 ### 8-5-23:  
 - Added some margins in global.css to make the Springboard easier to read  
+  
+### 8-10-23:  
+- Corrected a bunch of small errors and made a bunch of small revisions  
