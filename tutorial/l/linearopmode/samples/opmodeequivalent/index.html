@@ -58,6 +58,7 @@
         <span class="keyword">while</span> (opModeIsActive()) {
             <span class="comment">//This section equivalent to loop()</span>
             <span class="field">log</span>.add(<span class="string">"Looped in loop()"</span>);
+            <span class="field">telemetry</span>.update(); <span class="comment">//OpMode does this for you</span>
         }
 
         <span class="comment">//This section equivalent to stop()</span>

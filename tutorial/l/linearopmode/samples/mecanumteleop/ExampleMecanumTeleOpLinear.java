@@ -66,8 +66,6 @@ public class ExampleMecanumTeleOpLinear extends LinearOpMode {
             telemetry.addData("strafe", strafe);
 
             telemetry.update();
-
-            idle(); //allow the system to do background tasks (otherwise it may crash)
         }
 
         //Put anything here that needs to run once after Stop is pressed

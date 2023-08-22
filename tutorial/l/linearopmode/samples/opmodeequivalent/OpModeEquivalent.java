@@ -29,6 +29,7 @@ public class OpModeEquivalent extends LinearOpMode {
         while (opModeIsActive()) {
             //This section equivalent to loop()
             log.add("Looped in loop()");
+            telemetry.update(); //OpMode does this for you
         }
 
         //This section equivalent to stop()

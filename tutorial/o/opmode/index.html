@@ -19,7 +19,7 @@
 			<tr class="navtr"><td class="navtd"><a class="nava" href="../../../index.html">Go Home</a></td><td class="navtd"><a class="nava" href="../../l/linearopmode/index.html">This page's LinearOpMode counterpart</a></td><td class="navtd"><a class="nava" href="../../../springboard/index.html">Springboard</a></td><td class="navtd"><a class="nava" href="../../index.html">MI-FTC Tutorials Index</a></td></tr>
 		</tbody></table>
 	</div>
-  <span class="modtime">Last updated 8-10-23</span>
+  <span class="modtime">Last updated 8-22-23</span>
 	<hr>
 	<div id="contentbox">
 		<p><a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/eventloop/opmode/OpMode.html">OpMode</a> contains the subclass <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/eventloop/opmode/LinearOpMode.html">LinearOpMode</a>, meaning that LinearOpMode is actually implemented in terms of OpMode. This is explored more in (coming soon) <b>Which OpMode? Each implemented in terms of the other</b>, but right now this fact is mostly just an excuse to link to both classes in the JavaDoc. They can both do all the same things, but many people find that their different structures cater to different use cases. Keep that in mind - don't get caught up in one! Look at both and determine which is the best to use for each program.</p>
@@ -74,6 +74,8 @@
 		</code>
 		<p>That might tell you everything you need to know, but if it doesn't, we're going to walk through it.</p>
 		<hr>
+    <p>OpMode handles more things for you than LinearOpMode does. Notably, calling idle() is not required (it shouldn't be needed in LinearOpMode either because a LinearOpMode runs in its own thread but some sources recommend it) and telemetry is automatically updated without requiring you to call telemetry.update().</p>
+    <br><br>
 		<code><span class="keyword">package</span> org.firstinspires.ftc.teamcode;</code>
 		<p>This line tells the compiler that this class is part of the TeamCode package. This is important becuase only TeamCode gets built onto the device, so we need to be in that package to have our program appear on the robot controller.</p>
 		<br><br>
