@@ -19,7 +19,7 @@
 			<tr class="navtr"><td class="navtd"><a class="nava" href="../../../index.html">Go Home</a></td><td class="navtd"><a class="nava" href="../../o/opmode/index.html">This page's OpMode counterpart</a></td><td class="navtd"><a class="nava" href="../../../springboard/index.html">Springboard</a></td><td class="navtd"><a class="nava" href="../../index.html">MI-FTC Tutorials Index</a></td></tr>
 		</tbody></table>
 	</div>
-  <span class="modtime">Last updated 8-22-23</span>
+  <span class="modtime">Last updated 8-23-23</span>
 	<hr>
 	<div id="contentbox">
 		<p><a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/eventloop/opmode/LinearOpMode.html">LinearOpMode</a> is a subclass of <a target="_blank" href="https://javadoc.io/doc/org.firstinspires.ftc/RobotCore/latest/com/qualcomm/robotcore/eventloop/opmode/OpMode.html">OpMode</a>, meaning that LinearOpMode is actually implemented in terms of OpMode. This is explored more in the <a target="_blank" href="samples/opmodeequivalent/index.html">OpModeEquivalent sample program</a>, but mentioning this fact right now is mostly just an excuse to link to both classes in the JavaDoc. They can both do all the same things, but many people find that their different structures cater to different use cases. Keep that in mind - don't get caught up in one! Look at both and determine which is the easiest for you to understand or, if you feel a little more brave, which is the best to use for each program.</p>
@@ -30,32 +30,34 @@
 <b class="keyword">import</b> com.qualcomm.robotcore.eventloop.opmode.<span class="annotation">TeleOp</span>;
 <b class="keyword">import</b> com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
-<span class="comment">//or @Autonomous</span>
+<span class="comment">//or @Autonomous
+//Change these arguments to change the appearance in the Driver Station</span>
 <span class="annotation">@TeleOp</span>(name="", group="")
 <b class="keyword">public</b> <b class="keyword">class</b> <span class="comment">BoilerPlate_LinearOpMode</span> <b class="keyword">extends</b> LinearOpMode {
 
-    <span class="comment">//Put your early stage initialization code here</span>
+    <span class="comment">//Declare variables (more specifically class members) here</span>
 
     <b class="annotation">@Override</b>
     <b class="keyword">public void</b> runOpMode() {
 	
-        <span class="comment">//Put your initialization code here</span>
+        <span class="comment">//Initialize things here</span>
 		
         waitForStart();
 		
-        <span class="comment">//Put any code here which should run only once after Start is pressed</span>
+        <span class="comment">//Code here will run only once when Start is pressed</span>
 
         <b class="keyword">while</b> (opModeIsActive()) {
 		
             <span class="comment">//Put any code here which should loop until Stop is pressed</span>
 			
-            //idle(); <span class="comment">//Give the system more time to do background tasks
-            //This shouldn't be necessary, but try adding it if your program crashes at random just in case.</span>
+            idle(); <span class="comment">//Give the system more time to do background tasks
+            //This shouldn't be necessary and isn't in the boilerplate template,
+            //but try adding it if your program crashes at random just in case.</span>
             
             <span class="field">telemetry</span>.update(); <span class="comment">//OpMode does this for you</span>
         }
 		
-        <span class="comment">//Put anything here that needs to run once after Stop is pressed</span>
+        <span class="comment">//Put anything here that needs to run once when Stop is pressed</span>
 		
     }
 }
@@ -93,7 +95,7 @@
 		<p>You do not necessarily need this loop. Especially in an autonomous OpMode, you may only want your code to run once. In that case, just put it under the <i>waitForStart();</i> method, and it will run once before stopping. In a TeleOp, however, you usually want to continually poll the controllers and sensors and continue running until the <b>Stop</b> button is pressed. <i>opModeIsActive()</i> returns <i>true</i> from the time when the <b>Start</b> button is pressed until the OpMode is stopped (either because the <b>Stop</b> button was pressed or there was a fatal error), so any code inside this loop will run continuously until the OpMode is stopped.</p>
 		<hr>
 		<code>idle();</code>
-		<p>The OpMode is running on its own thread, and this method causes the thread to <i>idle</i> for a bit to allow the system and SDK to carry out other background tasks. If you don't call this at the end of each loop, the SDK might not have enough time to do its own things, and it may crash randomly.</p>
+		<p>The OpMode is running on its own thread, and this method causes the thread to <i>idle</i> for a bit to allow the system and SDK to carry out other background tasks. If you don't call this at the end of each loop, the SDK might not have enough time to do its own things, and it may crash randomly. Android <i>should</i> take care of this for you, but some sources suggest that it might not do a great job of it sometimes and calling this can help.</p>
 		<hr>
 		<p>Follow the comments in the example above (also downloadable as a <a href="https://mi-ftc.github.io/download/boilerplate/index.html">boilerplate template</a>) to determine where to place the various sections of your code.</p>
     

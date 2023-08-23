@@ -1,3 +1,8 @@
+:root {
+  --backgroundColor: lightgray;
+}
+
+
 .copyright {
   font-size: 8pt;
 }
@@ -23,7 +28,8 @@
 
 
 body {
-  background-color:lightgray;
+  /*background-color: lightgray;*/
+  background-color: var(--backgroundColor);
 }
 
 /* Makes <code> behave like <pre> but with an extra border */

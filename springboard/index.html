@@ -10,7 +10,7 @@
     <hr id="top"><hr><hr>
     <div id="headerbox">
       <!--<h2 style="color: darkorange;">Under Construction</h2>-->
-      <p>This is roughly representative of what will be published at the start of the 2023-24 season. Do note that this page may be improved at any time, even during the season as novel issues and concepts arise. Even if this page does not fully suit the way your team works, hopefully it can still be a helpful resource to get your new programmers started on the right foot. <i class="small">(This note describes the current stage of development on this page, and will disappear once the game has been revealed.)</i></p>
+      <p>This is roughly representative of what will be published at the start of the 2023-24 season (Sept. 9). Do note that this page may be improved at any time, even during the season as novel issues and concepts arise. Even if this page does not fully suit the way your team works, hopefully it can still be a helpful resource to get your new programmers started on the right foot. We are looking into adding alternate themes for the site. If it is feasible, there may be a couple other style options "soon". <i class="small">(This note describes the current stage of development on this page, and will disappear once the game has been revealed.)</i></p>
       <h3>FTC Programming Springboard</h3>
       <p>Welcome to FTC! No experience in particular is required.</p>
       <p><b>All links (except Navigation below) open in a new tab.</b></p>
@@ -24,7 +24,7 @@
       </tbody></table>
       </div>
       
-      <span class="modtime">Last updated 8-10-23</span>
+      <span class="modtime">Last updated 8-23-23</span>
     </div>
     <hr>
     <div id="legendbox">
@@ -127,7 +127,7 @@
               <ul>
                 <li class="material"><b>Overview:</b> <a target="_blank" href="../tutorial/s/studiogithub/index.html">Git from within Android Studio</a> (<a href="../tutorial/s/studiogithub/index.html">same tab</a>)<i class="mathost">MI-FTC</i></li>
                 <li class="material"><b>Comprehensive:</b> <a target="_blank" href="https://www.jetbrains.com/help/idea/using-git-integration.html">IntelliJ tutorial for Git in IDEA</a><i class="mathost">Jetbrains (official)</i></li>
-                <li class="material"><b>Visualized:</b> The video for Part 1 also covers this.<!--<a target="_blank" href="https://youtu.be/rU-YifCAP2s">Video form</a><i class="mathost">MI-FTC via YouTube</i>--></li>
+                <li class="material"><b>Visualized:</b> The video for Part 1 also covers this.</li>
               </ul>
             </li>
           </ul>
@@ -154,12 +154,6 @@
           <li class="material"><a target="_blank" href="https://raw.githubusercontent.com/alan412/LearnJavaForFTC/master/LearnJavaForFTC.pdf">Learn Java For FTC</a> - a 220-or-so page PDF with a specific focus on FTC programming and more of a curricular style. If you read this, you might not need the <span class="specific">Hello Robot</span> tutorial later.<span class="mathost">Alan Smith</span></li>
         </ul>
       </li>
-        <!--<li class="material"><b>Overview:</b> <a target="_blank" href="https://www.w3schools.com/java/default.asp">W3Schools Java Tutorial</a><i class="mathost">W3Schools</i>
-          <ul>
-            <li>Go through the "Tutorial" and "Methods" sections, then stop. The Oracle tutorial below ("For your second season") covers the remaining concepts more effectively.</li>
-            <li>If you want to try some of the exercises yourself but don't want to install the Java runtime, <a target="_blank" href="https://replit.com/">Replit</a> lets you write and run code online for free. <i class="mdesc">(At the time of writing, it's all branded up for GPT integration. You can safely ignore all that.)</i> Alternatively, you could just wait until we start writing code for a robot.</li>
-          </ul>
-        </li>-->
         <li class="material"><b>Reference:</b> <a target="_blank" href="https://docs.oracle.com/javase/8/docs/api/">Java API Documentation (Javadoc)</a><i class="mathost">Oracle</i></li>
         <li class="material">For your second season: <a target="_blank" href="https://docs.oracle.com/javase/tutorial/">Oracle's Java tutorial</a> - You're ready to start utilizing Object-Oriented Programming concepts and creating your own libraries and interfaces. This tutorial will introduce you to OOP and some of the more unique Java language features. Start with the "Learning the Java Language" trail.<i class="mathost">Oracle</i></li>
       </ul>
@@ -168,17 +162,10 @@
       
       <h5 class="theader">FtcRobotController</h5> - <i class="tdesc">The SDK created by FIRST which provides functions to interact with the robot</i>
         <ul>
-          <!--<li><a target="_blank" href="https://ftcsim.org/ftcsim/">FTCsim</a> could be a good way to start experimenting with (autonomous) code without needing to get hold of a real robot. It is very definitely incomplete and you should expect bugs, but hopefully our use of it motivates its continued development. If your team does not have a lot of robots, this can give every programmer a virtual robot to start learning with until the competition robot is ready.
-            <ul>
-              <li></li>
-              <li>Remember, if you need something to run continuously, use a <code class="inline"><span class="keyword">while</span> (opModeIsActive()) {}</code> loop. This way, the OpMode actually stops when you tell it to. Also, a <code class="inline"><span class="keyword">while</span> (true) {}</code> loop will cause the sim to completely hang.</li>
-            </ul>
-          </li>-->
           <li>You can't learn how to do something right if you can't verify that your work is correct, so you will want to have some way of testing your code. Throughout the entire season, your team will want to maintain some secondary hardware setup to test things without having to fight over who gets the only robot today. A robot from a previous season or even just a small collection of loose parts (sensors, actuators, and wires) will work well. The <a target="_blank" href="https://docs.revrobotics.com/duo-control/control-system-overview/port-pinouts">REV Control Hub port pinouts</a> should help you wire it up. Another option is <a target="_blank" href="simulators.html">simulators</a>... (<a href="simulators.html">same tab</a>)</li>
           <li><b>Overview:</b> <a target="_blank" href="https://docs.revrobotics.com/duo-control/programming/hello-robot-introduction-to-programming#op-modes">Hello Robot - Introduction to Programming</a><i class="mathost">REV Robotics (official)</i>
             <ul>
               <li>Android Studio users: Read through the OnBotJava portions of the tutorial. Studio has different ways to create a new OpMode, but the programming is exactly the same.</li>
-              <!--<li>They spend some time on building a hardware test bed. You may not have a test bed or it may not be your job to build it, though at some point you will <em>need</em> to find a way to test your code without risking damage to the competition robot. A robot from a previous season or even just a small collection of loose parts (sensors, actuators, and wires) will work well. Make sure your team keeps at least one additional way to test code besides the competition robot itself, and you'll want to wire it up yourself. To that end, here are the <a target="_blank" href="https://docs.revrobotics.com/duo-control/control-system-overview/port-pinouts">REV Control Hub port pinouts</a>.</li>-->
               <li><a target="_blank" href="http://mi-ftc.github.io/tutorial/m/motorreversal/index.html">An alternative guide to why one side of a drivetrain needs to be reversed</a> (<a href="http://mi-ftc.github.io/tutorial/m/motorreversal/index.html">same tab</a>)<i class="mathost">MI-FTC</i></li>
               <li><i class="small">You might enjoy knowing that the Springboard, despite being developed fully independently of this particular tutorial, happens to fully align with their pacing and decisions on which concepts to introduce now and which to save for your second season. We both came to the same conclusion, so it is likely a good one.</i></li>
             </ul>
@@ -256,16 +243,12 @@
         <li><a href="https://developer.android.com/training/data-storage">Storing information on the device (FIRST allows this - could be useful to store calibration, profiles, and more)</a><i class="mathost">Android Developers (official)</i></li>
         <li><a target="_blank" href="https://www.reddit.com/r/FTC/comments/cxuylv/how_do_you_organize_your_code/">FTC mentors wondering about code organization</a> - you could consider splitting your robot into subsystems as is common with F<i>R</i>C<i class="mathost">Reddit</i></li>
       </ul>
-      <!--<br>
-      <li>Most forum and Q&amp;A sites are trustworthy. If you don't feel comfortable with it, you can look for another one, but the helpfulness of a particular thread usually only has to do with its relevancy, or at least the relevancy of any of its answers, to your problem. It's the users of a site that determine its trustworthiness, not the site itself. Well-known forums for programming help include Stack Exchange/Stack Overflow and Reddit.</li>-->
     </div>
     <br>
     <hr>
     <a href="#top">Back to Top</a>
     <hr>
-    <p class="copyright">&#127279; 2023. Any copyrights given in the remainder of this statement are collectively held by the "MI-FTC" GitHub organization and all its members. The FTC Springboard (this particular page) has only one license term associated with it: No person or other entity can sell this work or access to it. It should be freely accessible. Of course, if you use it as a portion of a larger profit-making work, that's fine. We just don't want people to have to pay for this. Otherwise, do literally anything else you want with it. A non-exhaustive list of examples: It can be included in any larger work, whether commercial or noncommercial, profit-making or not. You can publish modified versions of the Springboard or derivative works. You can also just publish it verbatim if you want to mirror it, archive an older version, or anything else. We don't really care, just don't sell the work itself. Thank you for being a kind member of the FTC community!
-    <p style="display:none">"No matter what you do, wingardium leviosa." <i>-- Mr. MI-FTC Prelease Preview Man</i>
-I should probably make a proper plan for how to teach this stuff. I can't just give everyone a computer with this page open and say, "Learn!".</p></p>
+    <p class="copyright">&#127279; 2023. Any copyrights given in the remainder of this statement are collectively held by the "MI-FTC" GitHub organization and all its members. The FTC Springboard (this particular page) has only one license term associated with it: No person or other entity can sell this work or access to it. It should be freely accessible. Of course, if you use it as a portion of a larger profit-making work, that's fine. We just don't want people to have to pay for this. Otherwise, do literally anything else you want with it. A non-exhaustive list of examples: It can be included in any larger work, whether commercial or noncommercial, profit-making or not. You can publish modified versions of the Springboard or derivative works. You can also just publish it verbatim if you want to mirror it, archive an older version, or anything else. We don't really care, just don't sell the work itself. Thank you for being a kind member of the FTC community!</p>
     <p class="copyright">See the disclaimer in the <a href="README.html">Site README</a> about the website name.</p>
     <hr><hr><hr>
   </body>
