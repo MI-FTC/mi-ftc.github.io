@@ -1,8 +1,3 @@
-:root {
-  --backgroundColor: white;
-}
-
-
 .copyright {
   font-size: 8pt;
 }
@@ -31,10 +26,6 @@ body {
   background-color: lightgray;
 }
 
-#themebg {
-  background-color: var(--backgroundColor);
-}
-
 /* Makes <code> behave like <pre> but with an extra border */
 code {
   border: 1px solid black;
@@ -58,6 +49,15 @@ i {
 li {
   margin: 6px;
 }
+
+/*button {
+  background-color: lightgray;
+}
+
+button:hover {
+  background-color: gray;
+}*/
+
 
 /* Allow display of inline code */
 .inline {
