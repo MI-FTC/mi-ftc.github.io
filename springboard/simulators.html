@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<!-- Head structure from Neocities (https://www.neocities.org) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulators - MI-FTC</title>
     <link href="https://mi-ftc.github.io/global.css" rel="stylesheet" type="text/css" media="all">
-	<!-- Link to any local stylesheets here -->
+    <script src="../internal/lib/theming.js"></script>
   </head>
-  <body>
+  <body onload="applySetTheme();">
     <hr><hr><hr>
 	<div id="headerbox">
     <h3>FTC Simulators</h3>
-    <p>TL,DR: You want <a target="_blank" href="https://github.com/Beta8397/virtual_robot">Beta8397/virtual_robot on GitHub</a> if you're doing Java. If you're doing Blocks and you can live with only having Autonomous programs, try <a target="_blank" href="https://ftcsim.org/ftcsim">FTCSim</a> <span class="small">(if your system can handle Unity on the web)</span>. You can also try <a target="_blank" href="http://vrobotsim.com">Virtual Robot Sim</a>, which might let you make TeleOp programs too.</p>
+    <p>Basically, you want <a target="_blank" href="https://github.com/Beta8397/virtual_robot">Beta8397/virtual_robot on GitHub</a> if you're doing Java. If you're doing Blocks and you can live with only having Autonomous programs, try <a target="_blank" href="https://ftcsim.org/ftcsim">FTCSim</a> <span class="small">(if your system can handle Unity on the web)</span>. You can also try <a target="_blank" href="http://vrobotsim.com">Virtual Robot Sim</a>, which might let you make TeleOp programs too.</p>
     <span class="modtime">Last updated 8-23-23</span>
 	</div>
 	<div id="navbox">
@@ -28,7 +27,6 @@
 	<hr>
 	<div id="contentbox">
 		<p>Perhaps you want to test some code when you don't have direct access to a robot. It's nice to be able to test your programs at home so you can spend valuable shop time on more important things than wrangling null pointers and configuration errors. One possibility is to at least make sure they initialize by using two phones, one as a robot controller and another as a driver station, even if you can't control anything with them. This will at least let you test the actually interesting parts of the code in the shop and keep all those embarrassing initialization errors to yourself.</p>
-    <!-- <p class="small">This is probably an acceptable option for you and I'm just insane, because I only have one phone new enough. I tried knocking down the minimum API level (or minimum SDK version; even Google is inconsistent with this terminology) of FtcRobotController by 1 (down to API level 22) to support the next-newest phone (I don't know where the Driver Station source is, I imagine that would be much easier and I really just need to look for it someday), but they (actually the Android NDK apparently likes to do this by default so they probably had no hand in it) built the shared objects with a GNU hash type which Android only supports starting with API level 23. I don't really feel like hunting down the source for those and re-building them right now, and I also don't feel like spending money on a phone with such a limited use case, so I look to another option (for now). <i>It would be interesting to make the Robot Controller work on older devices someday, and while I'm at it I would also make it able to connect to a Driver Station over localhost instead of Wi-Fi Direct so you could just use one phone to make sure your OpMode initializes. Maybe someday when I'm bored.</i></p> -->
     <p>There are also multiple options around for simulating an FTC robot. Here are all the ones that I have found and tried so far:
       <ul>
         <li><b class="specific">Blocks: </b><a target="_blank" href="https://ftcsim.org/ftcsim">FTCSim (https://ftcsim.org/ftcsim)</a> - a 3D simulator with tutorials and a few different scenarios. You can only really make Autonomous programs in it as it does not support gamepads, but that will let you make a driving robot. (well, the left stick controls the camera apparently but it doesn't actually control your robot) It runs online with Unity and doesn't have any performance issues on a nice computer ("nice" being an AMD A-Series APU, for reference). It is still in development, and the OnBotJava tab in particular is still in beta and lacks quite a few things from the SDK (notably ElapsedTime). It has tutorials and looks promising though, so perhaps if we use it enough, the developers will stay motivated and see this project through to completion.

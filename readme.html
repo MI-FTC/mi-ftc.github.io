@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MI-FTC - README</title>
     <link href="global.css" rel="stylesheet" type="text/css" media="all">
+    <script src="internal/lib/theming.js"></script>
   </head>
-  <body>
+  <body onload="applySetTheme();">
     <hr><hr><hr>
     <div id="headerbox">
       <h3>Welcome to MI-FTC!</h3>
-      <p class="modtime">Last updated 7-11-23</p>
+      <p class="modtime">Last updated 8-24-23</p>
     </div>
     <div id="navbox">
 		<table id="navtable">
@@ -25,14 +26,12 @@
 					<td class="navtd">
 						<a class="nava" href="index.html">Go to Home Page</a>
 					</td>
+          <td class="navtd">
+            <a class="nava" href="springboard/index.html">Springboard</a>
+          </td>
 					<td class="navtd">
-						<a class="nava" href="changes.html">
-							See Planned Changes to the Website
-						</a>
-					</td>
-					<td class="navtd">
-						<a class="nava" href="mine.html">
-							Which materials are hosted here?
+						<a class="nava" href="tutorial/index.html">
+							Tutorials Hosted Here
 						</a>
 					</td>
 				</tr>
@@ -45,18 +44,22 @@
 		<p>Here lies a small assortment of FTC programming resources, most 
 			notably the <a target="_blank" href="springboard/index.html">Springboard</a> 
 			(<a href="springboard/index.html">same tab</a>).</p>
-		<p>This README is a (suboptimal) example of how we format and lay out 
-			these pages.</p>
+		<p>The <a href="internal/template/temp-page.html">Template Page</a> 
+    demonstrates how we format and lay out these pages.</p>
 		<p>We link to other sources as much as possible, but sometimes the right
-			material either does not exist or is not easy to understand. In 
-			those situations, we create our own!</p>
+			material either does not exist or is not as easy to understand as we want 
+      it to be. In those situations, we create our own!</p>
 		<p>If you want to improve something, please do! As far as I can tell,
 			you should be able to check out the repo and make a pull request. I 
-			haven't nailed down all the details of how this organization works 
-			yet.</p>
-		<p>If you find something wrong, please make a scene in the Issues 
-			section.</p>
-		<p>And by the way, nothing is actually written in Java... but GitHub has
+			haven't quite figured out how these GitHub organizations work yet, so if 
+      it's broken, I'm sorry.</p>
+		<p>If you find something wrong, please construct some criticism in the
+     Issues section.</p>
+    <p>We have just added rudimentary support for 
+    <a href="thememan.html">theming</a>
+    . <em>It's not done yet</em>, but we're working on it! If you don't set a 
+    theme or just set the default theme, things should mostly work as normal.</p>
+		<p>No part of the site itself is written in Java, but GitHub has
 			picked up on the OpMode templates.</p>
 		<br>
 		<p>A random note for developers: If you clone the repo, change the 

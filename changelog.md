@@ -60,3 +60,10 @@ Machine on older browsers
   
 ### 8-10-23:  
 - Corrected a bunch of small errors and made a bunch of small revisions  
+
+### 8-23-23:  
+- Clarified necessity of idle() in LinearOpModes  
+- Started adding support for color themes (light/default/dark/custom)  
+
+### 8-24-23:  
+- Got color themes into a workable state and implemented them on every page  
