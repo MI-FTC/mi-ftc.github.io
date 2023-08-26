@@ -7,7 +7,7 @@
     <link href="https://mi-ftc.github.io/global.css" rel="stylesheet" type="text/css" media="all">
     <script src="internal/lib/theming.js"></script>
   </head>
-  <body onload="updateSetThemeDisplay(); applySetTheme(); populateCustomThemeFields();">
+  <body onload="initThemeMan();">
     <hr><hr><hr>
 	<div id="headerbox">
     <h3>Theme Manager</h3>
@@ -16,20 +16,27 @@
       <li>Link styling is not complete</li>
       <li>Not all pages may load your set theme yet</li>
     </ul></p>
-    <p>Click the Set button for the theme you want, then click Apply. Refresh the page to see the new theme.</p>
+    <p>Click the Set button for the theme you want, then click Apply.</p>
     <a href="index.html">Home</a>
 	</div>
   <hr>
 	<div id="contentbox">
     <table>
-      <tr><td><button onClick="setTheme('light');">Set Light Theme</button></td><td><button onClick="setTheme('default');">Set Default Theme</button></td><td><button onClick="setTheme('dark');">Set Dark Theme</button></td><td><button onClick="setTheme('custom');">Set Custom Theme</button></td></tr>
-      <tr><td><button onClick="applySetTheme()">Apply Set Theme</button></td><td><p id="setThemeDisplay">JavaScript disabled</p></td></tr>
+      <tr><td><button onClick="setTheme('light');">Set Light Theme</button></td><td><button onClick="setTheme('default');">Set Default Theme</button></td><td><button onClick="setTheme('dark');">Set Dark Theme</button></td><td><button onClick="setTheme('custom');">Set Custom Theme</button></td><td><button onClick="setTheme('none');">Set No Theme (refresh to apply)</button></td></tr>
+      <tr><td colspan="2"><button onClick="applySetTheme()">Apply Set Theme</button></td><td colspan="2"><p id="setThemeDisplay">JavaScript disabled</p></td><td colspan="2"><button onClick="restoreBuiltinThemes();">Restore Built-in Themes</button></td></tr>
       <tr><td colspan="2"><p>Set a Custom Theme (use CSS colors):</p></td></tr>
-      <tr><td><p>Background Color: </p></td><td><input id="backgroundInput"></td></tr>
-      <tr><td><p>Navigation Table Color: </p></td><td><input id="navtableInput"></td></tr>
-      <tr><td><p>Link Color: </p></td><td><input id="linkInput"></td></tr>
-      <tr><td><p>Text Color: </p></td><td><input id="textInput"></td><td><button onClick="saveCustomTheme(); setTheme('custom'); applySetTheme();">Save and Apply</button></td></tr>
-      <tr></tr>
+      <tr><td colspan="2"><p>Background Color: </p></td><td colspan="2"><input id="backgroundInput"></td></tr>
+      <tr><td colspan="2"><p>Navigation Table Color: </p></td><td colspan="2"><input id="navtableInput"></td></tr>
+      <tr><td colspan="2"><p>Link Color: </p></td><td colspan="2"><input id="linkInput"></td></tr>
+      <tr><td colspan="2"><p>Text Color: </p></td><td colspan="2"><input id="textInput"></td></tr>
+      <tr><td colspan="2"><p>Specific Terms Color: </p></td><td colspan="2"><input id="specificInput"></td></td>
+      <tr><td colspan="2"><p>Code Colorization:</p></td></tr>
+      <tr><td colspan="2"><p>Keyword: </p></td><td colspan="2"><input id="keywordInput"></td></tr>
+      <tr><td colspan="2"><p>Field: </p></td><td colspan="2"><input id="fieldInput"></td></tr>
+      <tr><td colspan="2"><p>Annotation: </p></td colspan="2"><td><input id="annotationInput"></td></tr>
+      <tr><td colspan="2"><p>String: </p></td><td colspan="2"><input id="stringInput"></td></tr>
+      <tr><td colspan="2"><p>Comment: </p></td><td colspan="2"><input id="commentInput"></td></tr>
+      <tr><td colspan="2"><p>Number: </p></td><td colspan="2"><input id="numberInput"></td><td><button onClick="saveSetTheme(); applySetTheme();">Save and Apply</button></td></tr>
     </table>
 	</div>
     <hr><hr><hr>
