@@ -86,6 +86,12 @@ var builtinThemeDark = {
   "deprecatedRemove": "red"
 };
 
+function restoreBuiltinThemes() {
+  localStorage.setItem("themeLight", JSON.stringify(builtinThemeLight));
+  localStorage.setItem("themeDefault", JSON.stringify(builtinThemeDefault));
+  localStorage.setItem("themeDark", JSON.stringify(builtinThemeDark));
+}
+
 var flag = localStorage.getItem("themeManRan");
 if (flag == undefined || flag == false) {
   restoreBuiltInThemes();
@@ -125,12 +131,6 @@ function saveSetTheme() {
 function updateSetThemeDisplay() {
   var setThemeDisplay = document.getElementById("setThemeDisplay");
   setThemeDisplay.innerHTML = localStorage.getItem("theme");
-}
-
-function restoreBuiltinThemes() {
-  localStorage.setItem("themeLight", JSON.stringify(builtinThemeLight));
-  localStorage.setItem("themeDefault", JSON.stringify(builtinThemeDefault));
-  localStorage.setItem("themeDark", JSON.stringify(builtinThemeDark));
 }
 
 
