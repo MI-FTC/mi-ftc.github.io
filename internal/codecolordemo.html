@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Head structure from Neocities (https://www.neocities.org) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theming Demo - MI-FTC</title>
+    <link href="../global.css" rel="stylesheet" type="text/css" media="all">
+    <script src="internal/lib/theming.js"></script>
+	<!-- Link to any local stylesheets here -->
+  </head>
+  <body onload="applySetTheme();">
+    <hr><hr><hr>
+	<div id="headerbox">
+    <h3>Theming Demo</h3>
+    <p>This is the demo snippet from Android Studio's color scheme editor.</p>
+    <p><a href="../thememan.html">Theme Manager</a></p>
+	</div>
+	<hr>
+	<div id="legendbox">
+    <p>Thing (CSS class name)</p>
+		<ul>
+      <li><b>Valid:</b></li>
+      <li class="keyword">Keyword (keyword)</li>
+      <li class="annotation">Annotation (annotation)</li>
+      <li class="comment">Comment (comment)</li>
+      <li class="string">String (string)</li>
+      <li class="field">Field (field)</li>
+      <li class="number">Number (number)</li>
+      <li class="method">Method (method)</li>
+      <li class="typeParameter">Type Parameter (typeParameter)</li>
+      <li class="escapeSequence">Escape Sequence (escapeSequence)</li>
+      <br>
+      <li><b>Invalid:</b></li>
+      <li class="invalid">Invalid (invalid)</li>
+      <li class="invalidUnderline">Invalid (invalidUnderline)</li>
+      <li class="unused">Unused (unused)</li>
+      <li class="deprecated">Deprecated (deprecated)</li>
+      <li class="deprecatedRemove">Deprecated and marked for removal (deprecatedRemove)</li>
+    </ul>
+	</div>
+	<hr>
+	<div id="contentbox">
+		<code>
+    <span class="comment">/* Block comment */</span>
+<span class="keyword">import</span> java.util.Date;
+<span class="keyword">import static</span> AnInterface.<span class="field"><i>CONSTANT</i></span>;
+<span class="keyword">import static</span> java.util.Date.parse;
+<span class="keyword">import static</span> SomeClass.<span class="field"><i>staticField</i></span>;
+<span class="comment">/**
+ * Doc comment here for SomeClass
+ * <u>@param</u> </span>T <span class="comment">type parameter
+ * <u>@see</u> </span>Math<span class="comment">#</span>sin<span class="comment">(double)
+ */</span>
+<span class="annotation">@Annotation</span> (name=value)
+<span class="keyword">public class</span> SomeClass<<span class="typeParameter">T</span> <span class="keyword">extends</span> Runnable> { <span class="comment">// some comment</span>
+  <span class="keyword">private</span> <span class="typeParameter">T</span> <span class="field">field</span> = <span class="keyword">null</span>;
+  <span class="keyword">private double</span> <span class="unused">unusedField</span> = <span class="number">12345.67890</span>;
+  <span class="keyword">private</span> <span class="invalid">UnknownType</span> <span class="field">anotherString</span> = <span class="string">"Another<span class="escapeSequence">\n</span>Strin\g"</span>;
+  <span class="keyword">public static int</span> <span class="field">staticField</span> = <span class="number">0</span>;
+  <span class="keyword">public final int</span> <span class="field">instanceFinalField</span> = <span class="number">0</span>;
+  <span class="keyword">protected final int</span> protectedField = <span class="number">0</span>;
+  <span class="keyword">final int</span> packagePrivateField = <span class="number">0</span>;
+
+  <span class="comment">/**
+   * Semantic highlighting:
+   * Generated spectrum to pick colors for local variables and parameters:
+   *  </span>Color#1 SC1.1 SC1.2 SC1.3 SC1.4 Color#2 SC2.1 SC2.2 SC2.3 SC2.4 Color#3
+   <span class="comment">*</span>  Color#3 SC3.1 SC3.2 SC3.3 SC3.4 Color#4 SC4.1 SC4.2 SC4.3 SC4.4 Color#5
+   <span class="comment">* <u>@param</u> param1
+   * <u>@param</u> reassignedParam
+   * <u>@param</u> param2
+   * <u>@param</u> param3
+   */</span>
+  <span class="keyword">public</span> <span class="method">SomeClass</span>(AnInterface param1, <span class="keyword">int</span>[] <u>reassignedParam</u>,
+                  <span class="keyword">int</span> param2
+                  <span class="keyword">int</span> param3) {
+    <span class="keyword">int</span> <u>reassignedValue</u> = <span class="keyword">this</span>.staticField + param2 + param3;
+    <span class="keyword">long</span> localVar1, localVar2, localVar3, localVar4;
+    <span class="invalidUnderline">int localVar = "IntelliJ"</span>; <span class="comment">// Error, incompatible types</span>
+    System.<span class="field"><i>out</i></span>.println(<span class="field">anotherString</span> + toString() + localVar);
+    <span class="keyword">int</span> sum = <span class="field">protectedField</span> + <span class="field">packagePrivateField</span> + <span class="field">staticField</span>;
+    <span class="keyword">long</span> time = <span class="deprecated">parse</span>(<span class="string">"1.2.3"</span>); <span class="comment">// Method is deprecated</span>
+    <span class="keyword">new</span> Thread().<span class="deprecatedRemove">countStackFrames</span>(); <span class="comment">// Method is deprecated and marked for removal</span>
+    <u>reassignedValue</u> ++; 
+    <span class="field">field</span>.run(); 
+    <span class="keyword">new</span> SomeClass() {
+      {
+        <span class="keyword">int</span> a = <span class="field">localVar</span>;
+      }
+    };
+    <u>reassignedParam</u> = <span class="keyword">new</span> ArrayList<String>().toArray(<span class="keyword">new int</span>[<span class="field"><i>CONSTANT</i></span>]);
+  }
+}
+<span class="keyword">enum</span> AnEnum { <i><span class="field">CONST1</span>, <span class="field">CONST2</span></i> }
+<span class="keyword">interface</span> AnInterface {
+  <span class="keyword">int</span> <span class="field"><i>CONSTANT</i></span> = <span class="number">2</span>;
+  <span class="keyword">void</span> <span class="method">method</span>();
+}
+<span class="keyword">abstract class</span> SomeAbstractClass {
+  <span class="keyword">protected int</span> <span class="field">instanceField</span> = <span class="field"><i>staticField</i></span>;
+}
+    </code>
+	</div>
+    <hr><hr><hr>
+  </body>
+</html>

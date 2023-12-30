@@ -255,7 +255,7 @@ function applyNavTable(theme) {
 }
 
 function applyColorization(theme) {
-  var classesToGet = ["specific", "keyword", "field", "annotation", "string", "comment", "number"];
+  var classesToGet = ["specific", "keyword", "field", "annotation", "string", "comment", "number", "method", "typeParameter", "escapeSequence", "invalid", "invalidUnderline", "unused", "deprecated", "deprecatedRemove"];
   var tagsOfClass;
   for (item of classesToGet) {
     try {

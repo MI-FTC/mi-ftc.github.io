@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Languages / Environments - MI-FTC</title>
+    <link href="https://mi-ftc.github.io/global.css" rel="stylesheet" type="text/css" media="all">
+    <script src="../internal/lib/theming.js"></script>
+  </head>
+  <body onload="applySetTheme();">
+    <hr><hr><hr>
+	<div id="headerbox">
+    <h3>Programming Environments (and languages)</h3>
+    <span class="modtime">Last updated 12-30-23</span>
+	</div>
+	<div id="navbox">
+		<table id="navtable">
+	<thead id="navthead">
+		<tr class="navtr"><th id="navth" colspan="3">Navigation</th></tr>
+	</thead>
+	<tbody id="navtbody">
+		<tr class="navtr"><td class="navtd"><a class="nava" href="../index.html">Go Home</a></td><td class="navtd"><a class="nava" href="index.html">Back to Springboard</a></td><td class="navtd"><a class="nava" href="../tutorial/index.html">MI-FTC Tutorials Index</a></td></tr>
+	</tbody>
+</table>
+	</div>
+	<hr>
+	<div id="contentbox">
+    <p>Arguably, the most important aspect of choosing a programming environment is consistency. The best environment is the one that everybody knows how to set up and use, so it is practical for all members of a team to use the same one.</p>
+    <p>This website is written with Java in mind for two reasons: most other online resources are also written for Java, and most FTC students appreciate the additional resources and capabilities that it provides. It should not present a scary learning curve to students in the FTC age range.</p>
+    <br>
+    <ul>
+      <li><b class="specific">Blocks</b>
+        <ul>
+          <li>Runs directly on the Robot Controller - use the REV Hardware Client with USB (REV Control Hubs only) or connect a device to the robot controller's Wi-Fi network and navigate to:
+            <ul>
+              <li>Control Hub: <a href="192.168.43.1:8080">192.168.43.1:8080</a></li>
+              <li>Phone: <a href="192.168.49.1:8080">192.168.49.1:8080</a></li>
+            </ul>
+          A side-effect of this is that the robot controller must be powered on and nearby in order to edit code.</li>
+          <li>Programs are assembled with visual blocks that are dragged in from a sidebar and connected in chains. Chains are run from top to bottom.</li>
+          <li>There is also a horizontal component. Some blocks produce values and have a tail on the left. They are accepted by blocks that can accept those values.</li>
+          <li>All the features available to your robot (it hides features that your robot lacks hardware for) are displayed and easily accessible in the sidebar. You don't have to discover anything that you can't immediately see there.</li>
+          <li>Other <a href="https://developers.google.com/blockly">Blockly</a> languages exist. Some have more features than FTC blocks and could be better for an introduction to programming in general. Good Blockly languages include <a target="_blank" href="http://appinventor.mit.edu">MIT AppInventor</a> and Berkeley's <a target="_blank" href="http://snap.berkeley.edu"><i>Snap!</i></a>. All of these languages map to typed code fairly well. (Typed code often contains more concise methods to do some functions, but code can almost always be structured to look like blocks. This is often preferred, as it makes the code easier to read and understand.)</li>
+        </ul>
+      </li>
+      <li>The robot controller has a built-in Java editor, usually stylized as <b class="specific">OnBotJava</b>.
+        <ul>
+          <li>Runs directly on the Robot Controller. See the point about this in <b class="specific">Blocks</b> above for further information.</li>
+          <li>Programs consist of typed lines of code, which usually run from top to bottom.</li>
+          <li>Depending on which <b class="specific">Blocks</b> language you want to compare to, Java either adds the entire concept of methods, makes them more flexible, or doesn't add much at all (in the case of <i>Snap!</i>). <i>Methods</i> are blocks of code that can be called by name and re-used in multiple places without typing all that code again. For example:
+          <code>
+          public void doSomething() {
+            telemetry.addLine("I'm definitely doing something!");
+            telemetry.addLine("This function does so much!");
+            telemetry.update();
+          }
+          // We've just created a method! (many languages call them "functions", but Java calls them "methods")
+          
+          if (gamepad1.a) { // if [A] on the first gamepad (assign with [Start] + [A]) is pressed
+            doSomething(); // "call" our method
+          }
+          
+          if (gamepad2.a) { // if [B] on the second gamepad (assign with [Start] + [B] is pressed
+            doSomething(); // do the same thing
+          }
+          </code></li>
+        </ul>
+      </li>
+    </ul>
+	</div>
+    <hr><hr><hr>
+  </body>
+</html>
