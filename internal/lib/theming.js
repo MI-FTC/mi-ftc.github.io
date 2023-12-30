@@ -9,21 +9,37 @@ var themeFields = [
   "comment",
   "string",
   "field",
-  "number"
+  "number",
+  "method",
+  "typeParameter",
+  "escapeSequence",
+  "invalid",
+  "invalidUnderline",
+  "unused",
+  "deprecated",
+  "deprecatedRemove"
 ];
   
   var builtinThemeLight = {
-  "background": "white",
+  "background": "#FFFFFF",
   "navtable": "blue",
   "link": "blue",
   "text": "black",
   "specific": "green",
-  "keyword": "blue",
-  "annotation": "goldenrod",
-  "comment": "gray",
-  "string": "green",
-  "field": "indigo",
-  "number": "blue"
+  "keyword": "#0033B3",
+  "annotation": "#9E880D",
+  "comment": "#8C8C8C",
+  "string": "#067D17",
+  "field": "#871094",
+  "number": "#1750EB",
+  "method": "#00627A",
+  "typeParameter": "#007E8A",
+  "escapeSequence": "#0037A6",
+  "invalid": "red",
+  "invalidUnderline": "red",
+  "unused": "#909090",
+  "deprecated": "#000000",
+  "deprecatedRemove": "red"
 };
 
 var builtinThemeDefault = {
@@ -32,26 +48,42 @@ var builtinThemeDefault = {
   "link": "blue",
   "text": "black",
   "specific": "green",
-  "keyword": "blue",
-  "annotation": "goldenrod",
-  "comment": "gray",
-  "string": "green",
-  "field": "indigo",
-  "number": "blue"
+  "keyword": "#0033B3",
+  "annotation": "#9E880D",
+  "comment": "#8C8C8C",
+  "string": "#067D17",
+  "field": "#871094",
+  "number": "#1750EB",
+  "method": "#00627A",
+  "typeParameter": "#007E8A",
+  "escapeSequence": "#0037A6",
+  "invalid": "red",
+  "invalidUnderline": "red",
+  "unused": "#909090",
+  "deprecated": "#000000",
+  "deprecatedRemove": "red"
 };
 
 var builtinThemeDark = {
-  "background": "#202020",
+  "background": "#2B2B2B",
   "navtable": "darkgreen",
   "link": "green",
   "text": "lightgray",
   "specific": "green",
-  "keyword": "darkorange",
-  "annotation": "goldenrod",
-  "comment": "gray",
-  "string": "green",
-  "field": "indigo",
-  "number": "blue"
+  "keyword": "#CC7832",
+  "annotation": "#BBB529",
+  "comment": "#629755",
+  "string": "#6A8759",
+  "field": "#9876AA",
+  "number": "#6897BB",
+  "method": "#FFC66D",
+  "typeParameter": "#507894",
+  "escapeSequence": "#CC7832",
+  "invalid": "brown",
+  "invalidUnderline": "brown",
+  "unused": "#909090",
+  "deprecated": "#000000",
+  "deprecatedRemove": "red"
 };
 
 var flag = localStorage.getItem("themeManRan");

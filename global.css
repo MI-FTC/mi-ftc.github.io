@@ -65,33 +65,73 @@ button:hover {
   padding: 2px;
 }
 
-/* Code colorization */
+/* Code colorization - and now I've ripped the RGB values right from Studio's light theme! */
+/* https://mi-ftc.github.io/internal/codecolordemo.html */
 .keyword {
 	font-weight: bold;
-	color: blue;
+	color: #0033B3;
 }
 
 .annotation {
-	color: goldenrod;
+	color: #9E880D;
 }
 
 .comment {
-	color: gray;
+  font-style: italic;
+	color: #8C8C8C;
 }
 
 .string {
 	font-weight: bold;
-	color: green;
+	color: #067D17;
 }
 
 .field {
   font-weight: bold;
-  color: indigo;
+  color: #871094;
 }
 
 .number {
-  color: blue;
+  color: #1750EB;
 }
+
+.method {
+  color: #00627A;
+}
+
+.typeParameter {
+  color: #007E8A;
+}
+
+.escapeSequence {
+  color: #0037A6;
+}
+
+/* bad stuff */
+.invalid {
+  color: red;
+}
+
+.invalidUnderline {
+  text-decoration: underline;
+  text-decoration-color: red;
+  text-decoration-style: wavy;
+}
+
+.unused {
+  color: #909090;
+}
+
+.deprecated {
+  font-style: italic;
+  text-decoration: line-through;
+}
+
+.deprecatedRemove {
+  text-decoration: line-through;
+  text-decoration-color: red;
+}
+
 
 /* How to display a specific named item or attribute */
 .specific {
@@ -104,12 +144,14 @@ button:hover {
     margin: 8px;
 }
 
+
 /* Puts more space around certain crammed links */
 .spacelink {
   margin-top: 3px;
   margin-bottom: 3px;
   display: inline-block;
 }
+
 
 /* The displayed hosts of materials on the Springboard */
 .mathost {
