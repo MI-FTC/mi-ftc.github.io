@@ -12,7 +12,7 @@ The [Template Page](http://mi-ftc.github.io/internal/template/temp-page.html) de
 We link to other sources as much as possible, but sometimes the right material either does not exist or is not as easy to understand as we want it to be. In those situations, we create our own!  
 If you want to improve something, please do! As far as I can tell, you should be able to check out the repo and make a pull request. I haven't quite figured out how these GitHub organizations work yet, so if it's broken, I'm sorry.  
 If you find something wrong, we would appreciate your insight in the Issues section. Or send us an action movie - there's probably enough issues to make "The Epic Error Exterminator of MI-FTC".  
-We have just added rudimentary support for [theming](http://mi-ftc.github.io/thememan.html). *It's not done yet*, but we're working on it! If you don't set a theme or just set the default theme, things should mostly work as normal.
+We have just added rudimentary support for [theming](http://mi-ftc.github.io/thememan.html). *It's not done yet*, but we're working on it! If you don't set a theme or just set the default theme, things should mostly work as normal.  
 No part of the site itself is written in Java, but GitHub has picked up on the OpMode templates.  
   
 A random note for developers: If you clone the repo, change the stylesheet, then load the page only to find that the style has not updated, one or both of two things has gone wrong:
