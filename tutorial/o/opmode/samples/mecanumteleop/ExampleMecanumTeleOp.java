@@ -18,7 +18,7 @@ public class ExampleMecanumTeleOp extends OpMode {
     double drive;
     double turn;
     double strafe;
-    double GCD;
+    double greatest;
 
     @Override
     public void init() {
@@ -63,14 +63,14 @@ public class ExampleMecanumTeleOp extends OpMode {
         turn = gamepad1.left_stick_x * 0.5; //Adjust multiplier to change sensitivity
         //The driver I worked with preferred slower turning
         strafe = gamepad1.right_stick_x * 1.1;
-        GCD = Math.max(Math.abs(drive) + Math.abs(turn) + Math.abs(strafe), 1);
+        greatest = Math.max(Math.abs(drive) + Math.abs(turn) + Math.abs(strafe), 1);
 
-        leftFront.setPower(drive + turn + strafe);
+        leftFront.setPower((drive + turn + strafe) / greatest);
         //Think this way: Must add power for positive (right) turn, so add turn. Same for strafe.
-        rightFront.setPower(drive - turn - strafe);
+        rightFront.setPower((drive - turn - strafe) / greatest);
         //Must remove power for positive (right) turn, so subtract turn.
-        leftBack.setPower(drive + turn - strafe);
-        rightBack.setPower(drive - turn + strafe);
+        leftBack.setPower((drive + turn - strafe) / greatest);
+        rightBack.setPower((drive - turn + strafe) / greatest);
 
         //Telemetry, to isolate problems with code or controller
         telemetry.addData("rightTrigger", gamepad1.right_trigger);

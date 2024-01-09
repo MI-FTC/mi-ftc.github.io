@@ -1,5 +1,8 @@
+// Some quick and dirty JavaScript. There are probably some improvements I can make in the future.
+
 var themeFields = [
   "background",
+  "border",
   "navtable",
   "link",
   "text",
@@ -22,6 +25,7 @@ var themeFields = [
   
   var builtinThemeLight = {
   "background": "#FFFFFF",
+  "border": "black",
   "navtable": "blue",
   "link": "blue",
   "text": "black",
@@ -44,6 +48,7 @@ var themeFields = [
 
 var builtinThemeDefault = {
   "background": "lightgray",
+  "border": "black",
   "navtable": "blue",
   "link": "blue",
   "text": "black",
@@ -66,6 +71,7 @@ var builtinThemeDefault = {
 
 var builtinThemeDark = {
   "background": "#2B2B2B",
+  "border": "black",
   "navtable": "darkgreen",
   "link": "green",
   "text": "lightgray",
@@ -80,10 +86,10 @@ var builtinThemeDark = {
   "typeParameter": "#507894",
   "escapeSequence": "#CC7832",
   "invalid": "brown",
-  "invalidUnderline": "brown",
+  "invalidUnderline": "lightgray",
   "unused": "#909090",
-  "deprecated": "#000000",
-  "deprecatedRemove": "red"
+  "deprecated": "lightgray",
+  "deprecatedRemove": "lightgray"
 };
 
 function restoreBuiltinThemes() {
@@ -94,7 +100,7 @@ function restoreBuiltinThemes() {
 
 var flag = localStorage.getItem("themeManRan");
 if (flag == undefined || flag == false) {
-  restoreBuiltInThemes();
+  restoreBuiltinThemes();
   localStorage.setItem("themeCustom", JSON.stringify({}));
   localStorage.setItem("themeManRan", true);
 }
@@ -156,8 +162,8 @@ function applySetTheme() {
 
 
 /* Get Tags/Classes */
-function getTextTags() {
-  var tagsToGet = ["p", "li", "h1", "h2", "h3", "h4", "h5", "h6", "b", "i", "strong", "em", "code"];
+function genericGetTags(tagsToGet) {
+  //var tagsToGet = ["p", "li", "h1", "h2", "h3", "h4", "h5", "h6", "b", "i", "strong", "em", "code"];
   var returnArray = [];
   tagsToGet.forEach(function(item) {
     try {
@@ -185,14 +191,26 @@ function getTextTags() {
   return returnArray;
 }*/
 
+//function getLinkTags() {
+//  try {
+//    var returnArray = Array.from(document.getElementsByTagName("a"));
+//    return returnArray;
+//  } catch(error) {
+//    console.log("Couldn't get link tags.");
+//    console.log(error);
+//  }
+//}
+
 function getLinkTags() {
-  try {
-    var returnArray = Array.from(document.getElementsByTagName("a"));
-    return returnArray;
-  } catch(error) {
-    console.log("Couldn't get link tags.");
-    console.log(error);
-  }
+  return genericGetTags(["a"]);
+}
+
+function getTextTags() {
+  return genericGetTags(["p", "li", "h1", "h2", "h3", "h4", "h5", "h6", "b", "i", "strong", "em", "code"]);
+}
+
+function getBorderTags() {
+  return genericGetTags(["code"]).push.apply(returnArray, Array.from(document.getElementsByClassName("section")));
 }
 
 
@@ -216,6 +234,10 @@ function applyBackground(theme) {
     console.log("Couldn't apply theme property 'background'");
     console.log(error);
   }
+}
+
+function applyBorder(theme) {
+  
 }
 
 function applyLinks(theme) {

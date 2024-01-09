@@ -49,7 +49,7 @@
     <span class="keyword">double</span> <span class="field">drive;</span>
     <span class="keyword">double</span> <span class="field">turn;</span>
     <span class="keyword">double</span> <span class="field">strafe;</span>
-    <span class="keyword">double</span> <span class="field">GCD;</span>
+    <span class="keyword">double</span> <span class="field">greatest;</span>
 
     <span class="annotation">@Override</span>
     <span class="keyword">public void</span> runOpMode() {
@@ -77,14 +77,14 @@
             <span class="field">turn</span> = <span class="field">gamepad1.left_stick_x</span> * <span class="number">0.5</span>; <span class="comment">//Adjust multiplier to change sensitivity</span>
             <span class="comment">//The driver I worked with preferred slower turning</span>
             <span class="field">strafe</span> = <span class="field">gamepad1.right_stick_x</span> * <span class="number">1.1</span>;
-            <span class="field">GCD</span> = Math.max(Math.abs(<span class="field">drive</span>) + Math.abs(<span class="field">turn</span>) + Math.abs(<span class="field">strafe</span>), <span class="number">1</span>);
+            <span class="field">greatest</span> = Math.max(Math.abs(<span class="field">drive</span>) + Math.abs(<span class="field">turn</span>) + Math.abs(<span class="field">strafe</span>), <span class="number">1</span>);
 
-            <span class="field">leftFront</span>.setPower(<span class="field">drive</span> + <span class="field">turn</span> + <span class="field">strafe</span>);
+            <span class="field">leftFront</span>.setPower((<span class="field">drive</span> + <span class="field">turn</span> + <span class="field">strafe</span>) / <span class="field">greatest</span>);
             <span class="comment">//Think this way: Must add power for positive (right) turn, so add turn. Same for strafe.</span>
-            <span class="field">rightFront</span>.setPower(<span class="field">drive</span> - <span class="field">turn</span> - <span class="field">strafe</span>);
+            <span class="field">rightFront</span>.setPower((<span class="field">drive</span> - <span class="field">turn</span> - <span class="field">strafe</span>) / <span class="field">greatest</span>);
             <span class="comment">//Must remove power for positive (right) turn, so subtract turn.</span>
-            <span class="field">leftBack</span>.setPower(<span class="field">drive</span> + <span class="field">turn</span> - <span class="field">strafe</span>);
-            <span class="field">rightBack</span>.setPower(<span class="field">drive</span> - <span class="field">turn</span> + <span class="field">strafe</span>);
+            <span class="field">leftBack</span>.setPower((<span class="field">drive</span> + <span class="field">turn</span> - <span class="field">strafe</span>) / <span class="field">greatest</span>);
+            <span class="field">rightBack</span>.setPower((<span class="field">drive</span> - <span class="field">turn</span> + <span class="field">strafe</span>) / <span class="field">greatest</span>);
 
             <span class="comment">//Telemetry, to isolate problems with code or controller</span>
             <span class="field">telemetry</span>.addData(<span class="string">"rightTrigger"</span>, <span class="field">gamepad1.right_trigger</span>);

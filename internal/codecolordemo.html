@@ -9,12 +9,13 @@
     <script src="lib/theming.js"></script>
 	<!-- Link to any local stylesheets here -->
   </head>
-  <body onload="applySetTheme();">
+  <body onload="applySetTheme(); updateSetThemeDisplay();">
     <hr><hr><hr>
 	<div id="headerbox">
     <h3>Theming Demo</h3>
     <p>This is the demo snippet from Android Studio's color scheme editor.</p>
     <p><a href="../thememan.html">Theme Manager</a></p>
+    <p id="setThemeDisplay">none (theming.js didn't update this text!)<p>
 	</div>
 	<hr>
 	<div id="legendbox">
@@ -42,7 +43,7 @@
 	<hr>
 	<div id="contentbox">
 		<code>
-    <span class="comment">/* Block comment */</span>
+<span class="comment">/* Block comment */</span>
 <span class="keyword">import</span> java.util.Date;
 <span class="keyword">import static</span> AnInterface.<span class="field"><i>CONSTANT</i></span>;
 <span class="keyword">import static</span> java.util.Date.parse;

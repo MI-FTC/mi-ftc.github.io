@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Some quick and dirty HTML. There are probably some improvements I can make in the future. -->
 <html>
   <head>
     <meta charset="UTF-8">
@@ -12,25 +13,28 @@
 	<div id="headerbox">
     <h3>Theme Manager</h3>
     <p>These settings are stored in this browser! They will not apply to other browsers or systems.</p>
-    <p>Themes are (currently) the only aspect of this site which require JavaScript, and they are not quite complete:<ul>
+    <p>Themes are (currently) the only aspect of this site which <strong class="specific">require JavaScript</strong>, and they are not quite complete:<ul>
       <li>Link styling is not complete</li>
       <li>Not all pages may load your set theme yet</li>
     </ul></p>
     <p>Click the Set button for the theme you want, then click Apply.</p>
+    <p>The theme only affects the <em>text</em> color and not any decorations (strikethrough, underline, etc.)!</p>
     <a href="index.html">Home</a>
     <a href="internal/codecolordemo.html">Test your theme</a>
 	</div>
   <hr>
 	<div id="contentbox">
     <table>
-      <tr><td><button onClick="setTheme('light');">Set Light Theme</button></td><td><button onClick="setTheme('default');">Set Default Theme</button></td><td><button onClick="setTheme('dark');">Set Dark Theme</button></td><td><button onClick="setTheme('custom');">Set Custom Theme</button></td><td><button onClick="setTheme('none');">Set No Theme (refresh to apply)</button></td></tr>
+      <tr><td><button onClick="setTheme('light');">Set Light Theme</button></td><td><button onClick="setTheme('default');">Set Default Theme</button></td><td><button onClick="setTheme('dark');">Set Dark Theme</button></td><td><button onClick="setTheme('custom');">Set Custom Theme</button></td><td><button onClick="setTheme('noTheme');">Set No Theme (refresh to apply)</button></td></tr>
       <tr><td colspan="2"><button onClick="applySetTheme()">Apply Set Theme</button></td><td colspan="2"><p id="setThemeDisplay">JavaScript disabled</p></td><td colspan="2"><button onClick="restoreBuiltinThemes();">Restore Built-in Themes</button></td></tr>
       <tr><td colspan="2"><p>Set a Custom Theme (use CSS colors):</p></td></tr>
       <tr><td colspan="2"><p>Background Color: </p></td><td colspan="2"><input id="backgroundInput"></td></tr>
+      <tr><td colspan="2"><p>Border Color: </p></td><td colspan="2"><input id="borderInput"></td></tr>
       <tr><td colspan="2"><p>Navigation Table Color: </p></td><td colspan="2"><input id="navtableInput"></td></tr>
       <tr><td colspan="2"><p>Link Color: </p></td><td colspan="2"><input id="linkInput"></td></tr>
       <tr><td colspan="2"><p>Text Color: </p></td><td colspan="2"><input id="textInput"></td></tr>
       <tr><td colspan="2"><p>Specific Terms Color: </p></td><td colspan="2"><input id="specificInput"></td></td>
+      <tr><td>---</td></tr>
       <tr><td colspan="2"><p>Code Colorization:</p></td></tr>
       <tr><td colspan="2"><p>Keyword: </p></td><td colspan="2"><input id="keywordInput"></td></tr>
       <tr><td colspan="2"><p>Field: </p></td><td colspan="2"><input id="fieldInput"></td></tr>
