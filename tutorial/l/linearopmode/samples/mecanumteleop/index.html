@@ -52,14 +52,14 @@
     <span class="keyword">double</span> <span class="field">greatest;</span>
 
     <span class="annotation">@Override</span>
-    <span class="keyword">public void</span> runOpMode() {
+    <span class="keyword">public void</span> <span class="method">runOpMode()</span> {
 
         <span class="comment">//Make sure these names match the Robot Controller configuration
         //You can change either this or the RC config to match if necessary</span>
-        <span class="field">leftFront</span> = <span class="field">hardwareMap</span>.get(DcMotor.class, <span class="string">"front_left_motor"</span>);
-        <span class="field">rightFront</span> = <span class="field">hardwareMap</span>.get(DcMotor.class, <span class="string">"front_right_motor"</span>);
-        <span class="field">leftBack</span> = <span class="field">hardwareMap</span>.get(DcMotor.class, <span class="string">"back_left_motor"</span>);
-        <span class="field">rightBack</span> = <span class="field">hardwareMap</span>.get(DcMotor.class, <span class="string">"back_right_motor"</span>);
+        <span class="field">leftFront</span> = <span class="field">hardwareMap</span>.get(DcMotor.<span class="keyword">class</span>, <span class="string">"front_left_motor"</span>);
+        <span class="field">rightFront</span> = <span class="field">hardwareMap</span>.get(DcMotor.<span class="keyword">class</span>, <span class="string">"front_right_motor"</span>);
+        <span class="field">leftBack</span> = <span class="field">hardwareMap</span>.get(DcMotor.<span class="keyword">class</span>, <span class="string">"back_left_motor"</span>);
+        <span class="field">rightBack</span> = <span class="field">hardwareMap</span>.get(DcMotor.<span class="keyword">class</span>, <span class="string">"back_right_motor"</span>);
 
         <span class="comment">//Your robot may need these inverted</span>
         <span class="field">leftFront</span>.setDirection(DcMotor.Direction.<span class="field">REVERSE</span>);

@@ -53,7 +53,7 @@
     <span class="keyword">double</span> <span class="field">greatest;</span>
 
     <span class="annotation">@Override</span>
-    <span class="keyword">public void</span> init() {
+    <span class="keyword">public void</span> <span class="method">init()</span> {
 
         <span class="comment">//Make sure these names match the Robot Controller configuration
         //You can change either this or the RC config to match if necessary</span>
@@ -71,7 +71,7 @@
     }
 
     <span class="annotation">@Override</span>
-    <span class="keyword">public void</span> loop() {
+    <span class="keyword">public void</span> <span class="method">loop()</span> {
 
         <span class="comment">//Put any code here which should loop until Stop is pressed
 
@@ -123,12 +123,12 @@
     <br><br>
 <code>
     <span class="annotation">@Override</span>
-    <span class="keyword">public void</span> init() {
+    <span class="keyword">public void</span> <span class="method">init()</span> {
     
-        <span class="field">leftFront</span> = <span class="field">hardwareMap</span>.get(DcMotor.class, <span class="string">"front_left_motor"</span>);
-        <span class="field">rightFront</span> = <span class="field">hardwareMap</span>.get(DcMotor.class, <span class="string">"front_right_motor"</span>);
-        <span class="field">leftBack</span> = <span class="field">hardwareMap</span>.get(DcMotor.class, <span class="string">"back_left_motor"</span>);
-        <span class="field">rightBack</span> = <span class="field">hardwareMap</span>.get(DcMotor.class, <span class="string">"back_right_motor"</span>);
+        <span class="field">leftFront</span> = <span class="field">hardwareMap</span>.get(DcMotor.<span class="keyword">class</span>, <span class="string">"front_left_motor"</span>);
+        <span class="field">rightFront</span> = <span class="field">hardwareMap</span>.get(DcMotor.<span class="keyword">class</span>, <span class="string">"front_right_motor"</span>);
+        <span class="field">leftBack</span> = <span class="field">hardwareMap</span>.get(DcMotor.<span class="keyword">class</span>, <span class="string">"back_left_motor"</span>);
+        <span class="field">rightBack</span> = <span class="field">hardwareMap</span>.get(DcMotor.<span class="keyword">class</span>, <span class="string">"back_right_motor"</span>);
 
         <span class="comment">//Your robot may need these inverted</span>
         <span class="field">leftFront</span>.setDirection(DcMotor.Direction.<span class="field">REVERSE</span>);
@@ -141,7 +141,7 @@
     <br><br>
 <code>
     <span class="annotation">@Override</span>
-    <span class="keyword">public void</span> loop() {
+    <span class="keyword">public void</span> <span class="method">loop()</span> {
 
         <span class="comment">// https://gm0.org/en/latest/docs/software/tutorials/mecanum-drive.html</span>
 
@@ -176,7 +176,7 @@
     <p>Finally, we send some telemetry back to the Driver Station. Even though we call telemetry.update() on every iteration of the loop, it only actually gets sent back every 250ms. This can be changed with <a target="_blank" href="https://javadoc.io/static/org.firstinspires.ftc/RobotCore/8.2.0/org/firstinspires/ftc/robotcore/external/Telemetry.html">telemetry</a>.setMsTransmissionInterval(). Anyway, we send back <span class="field">drive</span>, <span class="field">turn</span>, and <span class="field">strafe</span>, as well as the controller values used to calculate them. Sending both allows us to quickly determine if problems are caused by the program or by the controller. (Controller issues happen quite often.)</p>
     <hr>
     <h4>Controls:</h4>
-    <img src="ExampleMecanumTeleOp.svg" alt="Right trigger drives forward, left trigger drives backward, left stick X-axis turns, and right stick X-axis strafes.">
+    <span class="imgbox"><img class="center-fit" src="ExampleMecanumTeleOp.svg" alt="Right trigger drives forward, left trigger drives backward, left stick X-axis turns, and right stick X-axis strafes."></span>
     <hr>
     <h4>Download:</h4>
     <b><a target="_blank" href="ExampleMecanumTeleOp.java">Download the .java class</a></b>
