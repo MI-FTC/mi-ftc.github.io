@@ -4,8 +4,8 @@ org.firstinspires.ftc.teamcode.fy23.gamepad2.primitives.buttons
 org.firstinspires.ftc.teamcode.fy23.gamepad2.teleop
 org.firstinspires.ftc.teamcode.fy23.processors
 org.firstinspires.ftc.teamcode.fy23.robot
-org.firstinspires.ftc.teamcode.fy23.robot.generators
 org.firstinspires.ftc.teamcode.fy23.robot.subsystems
 org.firstinspires.ftc.teamcode.fy23.robot.subsystems.blank
+org.firstinspires.ftc.teamcode.fy23.robot.subsystems.digitaldevice
 org.firstinspires.ftc.teamcode.fy23.robot.subsystems.normalimpl
 org.firstinspires.ftc.teamcode.fy23.units
