@@ -3,3 +3,5 @@ MI-FTC Todo
 - Quick Links
 - Trimmed-down version of the Springboard for mobile devices
   - Automatically load this on smaller screens? No, readers should know which one they are reading.
+- Use a proper highlighting library (like highlight.js) on browsers that support it (CSS as a fallback
+  if JavaScript is not supported?)

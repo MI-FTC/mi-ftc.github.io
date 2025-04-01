@@ -67,3 +67,6 @@ Machine on older browsers
 
 ### 8-24-23:  
 - Got color themes into a workable state and implemented them on every page  
+
+### 4-1-25:  
+- (Not an April Fools joke.) Added notices in the README files that this website is not currently under active development.  
