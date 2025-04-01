@@ -3,4 +3,3 @@ MI-FTC Todo
 - Quick Links
 - Trimmed-down version of the Springboard for mobile devices
   - Automatically load this on smaller screens? No, readers should know which one they are reading.
-- The *real* goBILDA Strafer V5 assembly instructions :)
